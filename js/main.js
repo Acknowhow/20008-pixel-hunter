@@ -5,9 +5,9 @@
   let footer = document.querySelector(`.central .footer`);
   let greeting = document.querySelector(`#greeting`);
   let temps = document.querySelectorAll(`template`);
-  const tempsArr = [];
+  let tempsArr = [];
   Array.prototype.push.apply(tempsArr, temps);
-  const linksArr = tempsArr.map(function (temp) {
+  tempsArr = tempsArr.map(function (temp) {
     // Pushing all links Next and Back to temps array
     return temp.content.querySelectorAll(`img[alt='Next'], img[alt='Back']`);
   });
