@@ -8,17 +8,20 @@
   const tempsArr = [];
   Array.prototype.push.apply(tempsArr, temps);
   const linksArr = tempsArr.map(function (temp) {
-    return temp.content.querySelectorAll(`img[alt='Next'], img[alt='Back']`); // Pushing all links Next and Back to temps array
+    // Pushing all links Next and Back to temps array
+    return temp.content.querySelectorAll(`img[alt='Next'], img[alt='Back']`);
   });
   function show(slide) {
     let mainArr = [main, footer];
     let content = slide.content;
-    let clone = document.importNode(content, true); // Clone template content
+    // Clone template content
+    let clone = document.importNode(content, true);
     mainArr.forEach(function (selector) {
       selector.style.display = `none`;
     });
     central.appendChild(clone);
   }
-  show(greeting); // Greeting
+  // Greeting
+  show(greeting);
 })();
 
