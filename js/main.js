@@ -1,6 +1,10 @@
 import moduleIntro from './modules/templates/intro.js';
 import moduleGreeting from './modules/templates/greeting.js';
 import moduleRules from './modules/templates/rules.js';
+import moduleGame1 from './modules/templates/game-1.js';
+import moduleGame2 from './modules/templates/game-2.js';
+import moduleGame3 from './modules/templates/game-3.js';
+import moduleStats from './modules/templates/stats.js';
 
 (function () {
 
@@ -14,6 +18,10 @@ import moduleRules from './modules/templates/rules.js';
   document.querySelector(`#main`).innerHTML = moduleIntro;
   document.querySelector(`#greeting`).innerHTML = moduleGreeting;
   document.querySelector(`#rules`).innerHTML = moduleRules;
+  document.querySelector(`#game-1`).innerHTML = moduleGame1;
+  document.querySelector(`#game-2`).innerHTML = moduleGame2;
+  document.querySelector(`#game-3`).innerHTML = moduleGame3;
+  document.querySelector(`#stats`).innerHTML = moduleStats;
 
 
   // Array.prototype.push.apply(tempsArr, temps);
