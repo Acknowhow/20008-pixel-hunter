@@ -8,12 +8,12 @@ import moduleStats from './modules/templates/stats.js';
 
 (function () {
 
-  // let central = document.querySelector(`.central`);
-  // let main = document.querySelector(`#main`);
+  let central = document.querySelector(`.central`);
+  let main = document.querySelector(`#main`);
   // let footer = document.querySelector(`.central .footer`);
-  // let greeting = document.querySelector(`#greeting`);
-  // let temps = document.querySelectorAll(`template`);
-  // let tempsArr = [];
+  let greeting = document.querySelector(`#greeting`);
+  let temps = document.querySelectorAll(`template`);
+  let tempsArr = [];
 
   document.querySelector(`#main`).innerHTML = moduleIntro;
   document.querySelector(`#greeting`).innerHTML = moduleGreeting;
@@ -24,22 +24,20 @@ import moduleStats from './modules/templates/stats.js';
   document.querySelector(`#stats`).innerHTML = moduleStats;
 
 
-  // Array.prototype.push.apply(tempsArr, temps);
-  // tempsArr = tempsArr.map(function (temp) {
-  //   // Pushing all links Next and Back to temps array
-  //   return temp.content.querySelectorAll(`img[alt='Next'], img[alt='Back']`);
-  // });
-  // function show(slide) {
-  //   let mainArr = [main, footer];
-  //   let content = slide.content;
-  //   // Clone template content
-  //   let clone = document.importNode(content, true);
-  //   mainArr.forEach(function (selector) {
-  //     selector.style.display = `none`;
-  //   });
-  //   central.appendChild(clone);
-  // }
-  // // Greeting
-  // show(greeting);
+  Array.prototype.push.apply(tempsArr, temps);
+  tempsArr.map(function (temp) {
+    // Pushing all links Next and Back to temps array for future use
+    return temp.content.querySelectorAll(`img[alt='Next'], img[alt='Back']`);
+  });
+  function show(slide) {
+    // let mainArr = [main, footer];
+    let content = slide.content;
+    // Clone template content
+    let clone = document.importNode(content, true);
+    main.style.display = `none`;
+    central.insertBefore(clone, central.firstChild);
+  }
+  // Greeting
+  show(greeting);
 })();
 
