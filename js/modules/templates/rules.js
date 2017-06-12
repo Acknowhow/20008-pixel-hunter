@@ -22,5 +22,6 @@ src="img/paint_icon.png" width="16" height="16" alt="">.<br>
   <button class="rules__button  continue" type="submit" disabled>Go!</button>
 </form>
 </div>`;
+
 export default moduleRules;
 
