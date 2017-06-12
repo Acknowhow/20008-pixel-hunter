@@ -17,7 +17,7 @@ const constructor = () => {
   document.querySelector(`#greeting`).innerHTML = moduleGreeting;
   document.querySelector(`#rules`).innerHTML = `<div>${moduleRules}</div>`;
   document.querySelector(`#game-1`).innerHTML = `<div>${moduleGame1}</div>`;
-  document.querySelector(`#game-2`).innerHTML = moduleGame2;
+  document.querySelector(`#game-2`).innerHTML = `<div>${moduleGame2}</div>`;
   document.querySelector(`#game-3`).innerHTML = moduleGame3;
   document.querySelector(`#stats`).innerHTML = moduleStats;
 };
