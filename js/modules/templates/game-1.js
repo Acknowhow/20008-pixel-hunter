@@ -1,8 +1,4 @@
-const getElementFromTemplate = (template) =>{
-  return template;
-};
-
-const moduleGame1 = getElementFromTemplate(`<header class="header">
+const moduleGame1 = `<header class="header">
     <div class="header__back">
       <span class="back">
         <img src="img/arrow_left.svg" width="45" height="45" alt="Back">
@@ -56,5 +52,5 @@ const moduleGame1 = getElementFromTemplate(`<header class="header">
         <li class="stats__result stats__result--unknown"></li>
       </ul>
     </div>
-  </div>`);
+  </div>`;
 export default moduleGame1;

@@ -1,8 +1,4 @@
-const getElementFromTemplate = (template) =>{
-  return template;
-};
-
-const moduleRules = getElementFromTemplate(`<header class="header">
+const moduleRules = `<header class="header">
   <div class="header__back">
   <span class="back">
   <img src="img/arrow_left.svg" width="45" height="45" alt="Back">
@@ -25,6 +21,6 @@ src="img/paint_icon.png" width="16" height="16" alt="">.<br>
   <input class="rules__input" type="text" placeholder="Ваше Имя">
   <button class="rules__button  continue" type="submit" disabled>Go!</button>
 </form>
-</div>`);
+</div>`;
 export default moduleRules;
 
