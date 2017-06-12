@@ -22,6 +22,34 @@ import constructor from './modules/module_constructor.js';
     let clone = document.importNode(slide.content, true);
     let firstChild = document.querySelector(`.central`).firstChild;
     firstChild.replaceWith(clone);
+    // Rules input
+    if (document.querySelector(`.rules__input`)) {
+      let rulesDescription = document.querySelector(`.rules__description`);
+      const checkSelects = (targ, Arr) =>{
+        if (!targ.getAttribute(`checked`)) {
+          targ.setAttribute(`checked`, `true`);
+        }
+        const checked = (t) => {
+          return t.getAttribute(`checked`);
+        };
+        if (Arr.every(checked)) {
+          alert(`yes`);
+        }
+      };
+      document.querySelector(`.rules__input`).addEventListener(`change`, function (e) {
+        document.querySelector(`.rules__button`).removeAttribute(`disabled`);
+      });
+      rulesDescription.addEventListener(`click`, function (e) {
+        const targetsArr = [];
+        const targets = rulesDescription.querySelectorAll(`img`);
+        Array.prototype.push.apply(targetsArr, targets);
+        let target = e.target;
+        if (target.tagName !== `IMG`) {
+          return;
+        }
+        checkSelects(target, targetsArr);
+      });
+    }
   };
   let i = 1;
   // Attach click listeners for switching between screens
@@ -44,6 +72,7 @@ import constructor from './modules/module_constructor.js';
     }
     return false;
   });
+  // Attach event listener for input
    // for (let i = 0; i++; i < tempsArr.length) {
    //  if (tempsArr[i][0].alt === `Next`) {
    //    document.querySelector(`img`).addEventListener(`click`, function () {
