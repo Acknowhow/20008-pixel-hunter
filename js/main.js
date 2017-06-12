@@ -6,14 +6,13 @@ import constructor from './modules/module_constructor.js';
   let central = document.querySelector(`.central`);
   let temps = document.querySelectorAll(`template`);
   let tempsArr = [];
-  // let linksArr = [];
   // Attach data-attributes for future scrolling
   for (let i = 0; i < temps.length; i++) {
     temps[i].setAttribute(`data-gallery-slide`, `` + (i + 1));
   }
   // Function for links
   Array.prototype.push.apply(tempsArr, temps);
-  linksArr = tempsArr.map(function (temp) {
+  tempsArr.map(function (temp) {
     // Pushing all links Next and Back to temps array for future use
     return temp.content.querySelectorAll(`img[alt='Next'], img[alt='Back']`);
   });
