@@ -1,15 +1,14 @@
 import constructor from './modules/module_constructor.js';
 
 (function () {
+  // Construct templates
+  constructor();
   let central = document.querySelector(`.central`);
   let temps = document.querySelectorAll(`template`);
   let tempsArr = [];
   let linksArr = [];
-  // Construct templates
-  constructor();
   // Attach data-attributes for future scrolling
   for (let i = 0; i < temps.length; i++) {
-    document.querySelector(`#main`).setAttribute(`data-gallery-slide`, `` + 0);
     temps[i].setAttribute(`data-gallery-slide`, `` + (i + 1));
   }
   // Function for making modules
@@ -22,25 +21,27 @@ import constructor from './modules/module_constructor.js';
   const show = (slide) => {
     let clone = document.importNode(slide.content, true);
     let firstChild = document.querySelector(`.central`).firstChild;
-    firstChild.style.display = `none`;
-    document.querySelector(`.central`).insertBefore(clone, firstChild);
-  }
+    firstChild.replaceWith(clone);
+  };
+  let i = 1;
   // Attach click listeners for switching between screens
   central.addEventListener(`click`, function (e) {
+    let introTemplate = document.querySelector(`template[data-gallery-slide="1"`);
+    let currentTemplate = document.querySelector(`template[data-gallery-slide="${i}"`);
+    let currentPos = +currentTemplate.getAttribute(`data-gallery-slide`);
+    let nextTemplate = document.querySelector(`template[data-gallery-slide="${currentPos + 1}"]`);
+    let nextPos = nextTemplate.getAttribute(`data-gallery-slide`);
     if (e.target === document.querySelector(`.intro__asterisk`)) {
-      let initial = +document.querySelector(`#main`).getAttribute(`data-gallery-slide`);
-      let next = document.querySelector(`template[data-gallery-slide="${initial + 1}"]`);
-      show(next);
+      i = nextPos;
+      show(nextTemplate);
     }
-    // if (e.target === document.querySelector(`img[alt='Next']`)) {
-    //   show(document.querySelector(`#rules`));
-    //    // document.querySelector(`.rules__input`).addEventListener(`input`, function (e) {
-    //    //  if(this.value !== '') document.querySelector(`.rules__button`)
-    //    // })
-    //    // }
-    // }
-    // if (e.target === document.querySelector(`.rules__button`)) {
-    // }
+    if (e.target === document.querySelector(`img[alt='Next']`)) {
+      show(nextTemplate);
+    }
+    if (e.target === document.querySelector(`img[alt='Back']`)) {
+      show(introTemplate);
+      i = 1;
+    }
     return false;
   });
    // for (let i = 0; i++; i < tempsArr.length) {

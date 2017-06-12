@@ -7,12 +7,15 @@ import moduleGame3 from './templates/game-3.js';
 import moduleStats from './templates/stats.js';
 
 const constructor = () => {
-  let intro = document.createElement(`div`);
+  let intro = document.createElement(`template`);
+  intro.id = `introduction`;
   intro.innerHTML = moduleIntro;
+  document.querySelector(`#greeting`).before(intro);
+  let clone = document.importNode(intro.content, true);
   let firstChild = document.querySelector(`.central`).firstChild;
-  document.querySelector(`.central`).insertBefore(intro, firstChild);
+  document.querySelector(`.central`).insertBefore(clone, firstChild);
   document.querySelector(`#greeting`).innerHTML = moduleGreeting;
-  document.querySelector(`#rules`).innerHTML = moduleRules;
+  document.querySelector(`#rules`).innerHTML = `<div>${moduleRules}</div>`;
   document.querySelector(`#game-1`).innerHTML = moduleGame1;
   document.querySelector(`#game-2`).innerHTML = moduleGame2;
   document.querySelector(`#game-3`).innerHTML = moduleGame3;
