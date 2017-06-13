@@ -94,31 +94,5 @@ import constructor from './modules/module_constructor.js';
       show(introTemplate);
       i = 1;
     }
-    // return false;
   });
-  // Rules input
-  // if (document.querySelector(`.rules__input`)) {
-  //   let rulesDescription = document.querySelector(`.rules__description`);
-  //   const checkSelects = (targ, Arr) =>{
-  //     if (!targ.getAttribute(`checked`)) {
-  //       targ.setAttribute(`checked`, `true`);
-  //     }
-  //     const checked = (t) => {
-  //       return t.getAttribute(`checked`);
-  //     };
-  //     if (Arr.every(checked)) {
-  //       show(document.querySelector(`template[data-gallery-slide="4"]`));
-  //     }
-  //   };
-  //   rulesDescription.addEventListener(`click`, function (e) {
-  //     const targetsArr = [];
-  //     const targets = rulesDescription.querySelectorAll(`img`);
-  //     Array.prototype.push.apply(targetsArr, targets);
-  //     let target = e.target;
-  //     if (target.tagName !== `IMG`) {
-  //       return;
-  //     }
-  //     checkSelects(target, targetsArr);
-  //   });
-  // }
 })();
