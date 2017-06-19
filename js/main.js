@@ -1,8 +1,8 @@
-import './modules/module_constructor.js';
-import './modules/module_slideshow';
+import './modules/templates/intro.js';
+import './modules/templates/greeting.js';
+import './modules/module_slideshow.js';
 
 (function () {
-  // Construct templates
   let temps = document.querySelectorAll(`template`);
   let tempsArr = [];
   // Attach data-attributes for future scrolling
@@ -15,5 +15,4 @@ import './modules/module_slideshow';
     // Pushing all links Next and Back to temps array for future use
     return temp.content.querySelectorAll(`img[alt='Next'], img[alt='Back']`);
   });
-
 })();

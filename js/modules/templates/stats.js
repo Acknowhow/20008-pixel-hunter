@@ -1,9 +1,3 @@
-const getElementFromTemplate = (template) =>{
-  const container = document.createElement(`template`);
-  container.id = `stats`;
-  container.innerHTML = moduleStats;
-  document.querySelector(`#game-3`).after(container);
-};
 const moduleStats = `<header class="header">
     <div class="header__back">
       <span class="back">
@@ -112,5 +106,5 @@ const moduleStats = `<header class="header">
       </tr>
     </table>
   </div>`;
-getElementFromTemplate(moduleStats);
+export default moduleStats;
 

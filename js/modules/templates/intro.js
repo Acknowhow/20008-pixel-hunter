@@ -1,11 +1,3 @@
-const getElementFromTemplate = (template) =>{
-  const container = document.createElement(`template`);
-  container.id = `introduction`;
-  container.innerHTML = moduleIntro;
-  document.querySelector(`.central`).after(container);
-  let clone = document.importNode(container.content, true);
-  document.querySelector(`.central`).appendChild(clone);
-};
 const moduleIntro = `<main id="main" class="central__content">
     <div id="intro" class="intro">
       <h1 class="intro__asterisk">*</h1>
@@ -21,8 +13,18 @@ const moduleIntro = `<main id="main" class="central__content">
       <a href="https://www.facebook.com/htmlacademy" class="social-link  social-link--fb">Фэйсбук</a>
       <a href="https://vk.com/htmlacademy" class="social-link  social-link--vk">Вконтакте</a>
     </div>
-  </footer>
+ </footer>
 `;
-getElementFromTemplate(moduleIntro);
+const templateIntro = (template) =>{
+  const container = document.createElement(`template`);
+  container.id = `introduction`;
+  container.innerHTML = moduleIntro;
+  document.querySelector(`.central`).after(container);
+  let clone = document.importNode(container.content, true);
+  document.querySelector(`.central`).appendChild(clone);
+};
+templateIntro(moduleIntro);
 
-
+const asterisk = document.querySelector(`.intro__asterisk`);
+export const introClick = asterisk.onclick = function (e) {
+};

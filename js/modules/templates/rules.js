@@ -1,9 +1,3 @@
-const getElementFromTemplate = (template) =>{
-  const container = document.createElement(`template`);
-  container.id = `rules`;
-  container.innerHTML = moduleRules;
-  document.querySelector(`#greeting`).after(container);
-};
 const moduleRules = `
 <header class="header">
   <div class="header__back">
@@ -26,6 +20,6 @@ const moduleRules = `
     <button class="rules__button  continue" type="submit" disabled>Go!</button>
   </form>
 </div>`;
-getElementFromTemplate(moduleRules);
+export default moduleRules;
 
 
