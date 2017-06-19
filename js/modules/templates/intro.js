@@ -23,7 +23,6 @@ const moduleIntro = `<main id="main" class="central__content">
     </div>
   </footer>
 `;
-
 getElementFromTemplate(moduleIntro);
 
 
