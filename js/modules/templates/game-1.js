@@ -59,5 +59,5 @@ const moduleGame1 = `<header class="header">
       </ul>
     </div>
   </div>`;
-const game1Template = getElementFromTemplate(`moduleGame1`);
-export default game1Template;
+getElementFromTemplate(moduleGame1);
+

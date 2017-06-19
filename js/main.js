@@ -1,8 +1,7 @@
-import constructor from './modules/module_constructor.js';
+import './modules/module_constructor.js';
 
 (function () {
   // Construct templates
-  constructor();
   let central = document.querySelector(`.central`);
   let temps = document.querySelectorAll(`template`);
   let tempsArr = [];
@@ -19,8 +18,10 @@ import constructor from './modules/module_constructor.js';
   // Function for displaying screens
   const show = (slide) => {
     let clone = document.importNode(slide.content, true);
-    let firstChild = document.querySelector(`.central`).firstChild;
-    firstChild.replaceWith(clone);
+    while (central.firstChild) {
+      central.removeChild(central.firstChild);
+    }
+    document.querySelector(`.central`).appendChild(clone);
   };
   let i = 1;
   // Attach click listeners for switching between screens

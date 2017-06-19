@@ -26,6 +26,6 @@ const moduleRules = `
     <button class="rules__button  continue" type="submit" disabled>Go!</button>
   </form>
 </div>`;
-const templateRules = getElementFromTemplate(moduleRules);
-export default templateRules;
+getElementFromTemplate(moduleRules);
+
 
