@@ -20,6 +20,18 @@ const moduleRules = `
     <button class="rules__button  continue" type="submit" disabled>Go!</button>
   </form>
 </div>`;
-export default moduleRules;
+const templateRules = (template) => {
+  const container = document.createElement(`template`);
+  container.id = `rules`;
+  container.innerHTML = moduleRules;
+  document.querySelector(`#greeting`).after(container);
+};
+templateRules(moduleRules);
+if (e.target === rulesInput) {
+   document.querySelector(`.rules__input`).addEventListener(`input`, function () {
+     if (rulesButton.hasAttribute(`disabled`)) {
+       rulesButton.removeAttribute(`disabled`);
+     }
+   });
 
 

@@ -32,7 +32,7 @@ document.querySelector(`.central`).addEventListener(`click`, function (e) {
 //     // // Array.prototype.push.apply(answersArr, answers);
 //     // if (e.target === document.querySelector(`img[alt='Next']`)) {
 
-  if (e.target === document.querySelector(`.intro__asterisk`)) {
+  if (e.target === asterisk) {
     const currentTemplate = document.querySelector(`template[data-gallery-slide="${i}"`);
     const currentPos = +currentTemplate.getAttribute(`data-gallery-slide`);
     const nextTemplate = document.querySelector(`template[data-gallery-slide="${currentPos + 1}"]`);
@@ -42,16 +42,13 @@ document.querySelector(`.central`).addEventListener(`click`, function (e) {
   }
 });
 
-  //   i = nextPos;
-  //   show(nextTemplate);
-  // }
-  // if (e.target === rulesInput) {
-  //   document.querySelector(`.rules__input`).addEventListener(`input`, function () {
-  //     if (rulesButton.hasAttribute(`disabled`)) {
-  //       rulesButton.removeAttribute(`disabled`);
-  //     }
-  //   });
-  // }
+// if (e.target === rulesInput) {
+//   document.querySelector(`.rules__input`).addEventListener(`input`, function () {
+//     if (rulesButton.hasAttribute(`disabled`)) {
+//       rulesButton.removeAttribute(`disabled`);
+//     }
+//   });
+// }
   // if (e.target === rulesButton) {
   //   e.preventDefault();
   //   i = nextPos;

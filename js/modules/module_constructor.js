@@ -6,15 +6,7 @@ import moduleGame2 from './templates/game-2.js';
 import moduleGame3 from './templates/game-3.js';
 import moduleStats from './templates/stats.js';
 
-const templateIntro = (template) =>{
-  const container = document.createElement(`template`);
-  container.id = `introduction`;
-  container.innerHTML = moduleIntro;
-  document.querySelector(`.central`).after(container);
-  let clone = document.importNode(container.content, true);
-  document.querySelector(`.central`).appendChild(clone);
-};
-templateIntro(moduleIntro);
+
 // const templateGreeting = (template) =>{
 //   const container = document.createElement(`template`);
 //   container.id = `greeting`;
