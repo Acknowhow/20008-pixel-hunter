@@ -42,6 +42,14 @@ const moduleGame2 = `<header class="header">
       </ul>
     </div>
   </div>`;
-export default moduleGame2;
+const templateGame2 = (template) =>{
+  const container = document.createElement(`template`);
+  container.id = `game-2`;
+  container.innerHTML = moduleGame2;
+  document.querySelector(`#game-1`).after(container);
+};
+templateGame2(moduleGame2);
+
+export default templateGame2;
 
 

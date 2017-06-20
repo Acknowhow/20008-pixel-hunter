@@ -106,5 +106,13 @@ const moduleStats = `<header class="header">
       </tr>
     </table>
   </div>`;
-export default moduleStats;
+const templateStats = (template) =>{
+  const container = document.createElement(`template`);
+  container.id = `stats`;
+  container.innerHTML = moduleStats;
+  document.querySelector(`#game-3`).after(container);
+}
+templateStats(moduleStats);
+
+export default templateStats;
 

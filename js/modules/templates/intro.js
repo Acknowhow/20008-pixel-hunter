@@ -24,9 +24,3 @@ const templateIntro = (template) =>{
   document.querySelector(`.central`).appendChild(clone);
 };
 templateIntro(moduleIntro);
-export const asterisk = document.querySelector(`.intro__asterisk`);
-asterisk.addEventListener(`click`, function (e) {
-  return e;
-});
-asterisk.removeEventListener(`click`, function (e) {
-});

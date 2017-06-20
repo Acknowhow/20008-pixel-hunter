@@ -1,6 +1,12 @@
 import './modules/module_slideshow.js';
+import './modules/templates/intro.js';
 import './modules/templates/greeting.js';
 import './modules/templates/rules.js';
+import './modules/templates/game-1.js';
+import './modules/templates/game-2.js';
+import './modules/templates/game-3.js';
+import './modules/templates/stats.js';
+
 
 (function () {
   let temps = document.querySelectorAll(`template`);
