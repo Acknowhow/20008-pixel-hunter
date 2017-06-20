@@ -27,11 +27,12 @@ const templateRules = (template) => {
   document.querySelector(`#greeting`).after(container);
 };
 templateRules(moduleRules);
-if (e.target === rulesInput) {
-   document.querySelector(`.rules__input`).addEventListener(`input`, function () {
-     if (rulesButton.hasAttribute(`disabled`)) {
-       rulesButton.removeAttribute(`disabled`);
-     }
-   });
+const rulesButton = document.querySelector(`.rules__button`);
+export const rulesInput = document.querySelector(`.rules__input`);
+rulesInput.addEventListener(`input`, function () {
+  if (rulesButton.hasAttribute(`disabled`)) {
+    rulesButton.removeAttribute(`disabled`);
+  }
+});
 
 

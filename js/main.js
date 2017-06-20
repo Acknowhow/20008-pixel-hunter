@@ -1,5 +1,6 @@
 import './modules/module_slideshow.js';
 import './modules/templates/greeting.js';
+import './modules/templates/rules.js';
 
 (function () {
   let temps = document.querySelectorAll(`template`);
