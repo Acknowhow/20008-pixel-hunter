@@ -1,10 +1,3 @@
-import {moduleIntro} from './templates/intro.js';
-import moduleGreeting from './templates/greeting.js';
-import moduleRules from './templates/rules.js';
-import moduleGame1 from './templates/game-1.js';
-import moduleGame2 from './templates/game-2.js';
-import moduleGame3 from './templates/game-3.js';
-import moduleStats from './templates/stats.js';
 
 
 // const templateGreeting = (template) =>{

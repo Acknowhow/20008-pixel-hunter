@@ -1,5 +1,4 @@
 import {asterisk} from './templates/intro.js';
-import {rulesInput} from './templates/rules';
 let temps = document.querySelectorAll(`template`);
 let tempsArr = [];
 // Attach data-attributes for future scrolling
@@ -44,13 +43,6 @@ document.querySelector(`.central`).addEventListener(`click`, function (e) {
   }
 });
 
-if (e.target === rulesInput) {
-  document.querySelector(`.rules__input`).addEventListener(`input`, function () {
-    if (rulesButton.hasAttribute(`disabled`)) {
-      rulesButton.removeAttribute(`disabled`);
-    }
-  });
-}
   // if (e.target === rulesButton) {
   //   e.preventDefault();
   //   i = nextPos;
