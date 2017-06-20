@@ -25,6 +25,6 @@ const templateIntro = (template) =>{
 };
 templateIntro(moduleIntro);
 
-const asterisk = document.querySelector(`.intro__asterisk`);
-export const introClick = asterisk.onclick = function (e) {
-};
+export const asterisk = document.querySelector(`.intro__asterisk`).addEventListener(`click`, function (e) {
+  return e;
+});

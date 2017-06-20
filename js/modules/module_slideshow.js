@@ -1,4 +1,4 @@
-import {introClick} from './templates/intro.js';
+import {asterisk} from './templates/intro.js';
 
 let temps = document.querySelectorAll(`template`);
 let tempsArr = [];
@@ -17,7 +17,7 @@ const show = (slide) => {
 
 let i = 1;
 // // Attach click listeners for switching between screens
-// document.querySelector(`.central`).addEventListener(`click`, function (e) {
+document.querySelector(`.central`).addEventListener(`click`, function (e) {
 //     // const introTemplate = document.querySelector(`template[data-gallery-slide="1"`);
 //     // // Rules
 //     // const rulesInput = document.querySelector(`.rules__input`);
@@ -32,14 +32,15 @@ let i = 1;
 //     // // Array.prototype.push.apply(answersArr, answers);
 //     // if (e.target === document.querySelector(`img[alt='Next']`)) {
 
-if (introClick !== undefined) {
-  const currentTemplate = document.querySelector(`template[data-gallery-slide="${i}"`);
-  const currentPos = +currentTemplate.getAttribute(`data-gallery-slide`);
-  const nextTemplate = document.querySelector(`template[data-gallery-slide="${currentPos + 1}"]`);
-  const nextPos = nextTemplate.getAttribute(`data-gallery-slide`);
-  i = nextPos;
-  show(nextTemplate);
-}
+  if (e.target === document.querySelector(`.intro__asterisk`)) {
+    const currentTemplate = document.querySelector(`template[data-gallery-slide="${i}"`);
+    const currentPos = +currentTemplate.getAttribute(`data-gallery-slide`);
+    const nextTemplate = document.querySelector(`template[data-gallery-slide="${currentPos + 1}"]`);
+    const nextPos = nextTemplate.getAttribute(`data-gallery-slide`);
+    i = nextPos;
+    show(nextTemplate);
+  }
+});
 
   //   i = nextPos;
   //   show(nextTemplate);
