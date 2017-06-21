@@ -111,7 +111,7 @@ const templateStats = (template) =>{
   container.id = `stats`;
   container.innerHTML = moduleStats;
   document.querySelector(`#game-3`).after(container);
-}
+};
 templateStats(moduleStats);
 
 export default templateStats;

@@ -1,5 +1,4 @@
 let temps = document.querySelectorAll(`template`);
-let tempsArr = [];
 // Attach data-attributes for future scrolling
 for (let i = 0; i < temps.length; i++) {
   temps[i].setAttribute(`data-gallery-slide`, `` + (i + 1));
