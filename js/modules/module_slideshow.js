@@ -4,7 +4,7 @@ for (let i = 0; i < temps.length; i++) {
   temps[i].setAttribute(`data-gallery-slide`, `` + (i + 1));
 }
 
-const show = (slide) => {
+export const show = (slide) => {
   const clone = document.importNode(slide.content, true);
   while (document.querySelector(`.central`).firstChild) {
     document.querySelector(`.central`).removeChild(document.querySelector(`.central`).firstChild);
@@ -12,7 +12,7 @@ const show = (slide) => {
   document.querySelector(`.central`).appendChild(clone);
 };
 
-let i = 1;
+export let i = 1;
 // // Attach click listeners for switching between screens
 document.querySelector(`.central`).addEventListener(`click`, function (e) {
   const introTemplate = document.querySelector(`template[data-gallery-slide="1"`);
