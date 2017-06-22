@@ -1,4 +1,7 @@
+import {central} from './../module_constructor';
 import {makeTemplate} from './../module_constructor.js';
+import {show} from './../module_constructor.js';
+import {makeGame1Template} from './game-1.js';
 export const moduleRules = `
 <header class="header">
   <div class="header__back">
@@ -23,5 +26,20 @@ export const moduleRules = `
 </div>`;
 export const makeRulesTemplate = () => {
   makeTemplate(moduleRules, `rules`, document.querySelector(`#greeting`));
-}
+};
+export const showRulesTemplate = () => {
+  show(document.querySelector(`#rules`));
+  let next = (ev) => {
+    if (ev.target === document.querySelector(`img[alt='Next']`)) {
+      makeRulesTemplate();
+      show(document.querySelector(`#rules`));
+    }
+  };
+  central.addEventListener(`click`, function (e) {
+    next(e);
+  });
+  central.removeEventListener(`click`, function (e) {
+    next(e);
+  });
+};
 
