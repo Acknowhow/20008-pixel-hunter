@@ -1,3 +1,7 @@
+import {central} from './../module_constructor';
+import {makeTemplate} from './../module_constructor.js';
+import {show} from './../module_constructor.js';
+import {makeRulesTemplate} from './rules.js';
 export const moduleGreeting = `<div class="greeting central--blur">
     <div class="greeting__logo"><img src="img/logo_big.png" width="201" height="89" alt="Pixel Hunter"></div>
     <h1 class="greeting__asterisk">*</h1>
@@ -21,10 +25,21 @@ export const moduleGreeting = `<div class="greeting central--blur">
       <a href="https://vk.com/htmlacademy" class="social-link  social-link--vk">Вконтакте</a>
     </div>
   </footer>`;
-export const templateGreeting = (template) => {
-  const container = document.createElement(`template`);
-  container.id = `greeting`;
-  container.innerHTML = moduleGreeting;
-  document.querySelector(`#introduction`).after(container);
+export const makeGreetingTemplate = () => {
+  makeTemplate(moduleGreeting, `greeting`, document.querySelector(`#introduction`));
 };
-
+export const showGreetingTemplate = () => {
+  show(document.querySelector(`#greeting`));
+  let next = (ev) => {
+    if (ev.target === document.querySelector(`img[alt='Next']`)) {
+      makeRulesTemplate();
+      show(document.querySelector(`#rules`));
+    }
+  };
+  central.addEventListener(`click`, function (e) {
+    next(e);
+  });
+  central.removeEventListener(`click`, function (e) {
+    next(e);
+  });
+};

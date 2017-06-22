@@ -3,7 +3,7 @@
 // for (let i = 0; i < temps.length; i++) {
 //   temps[i].setAttribute(`data-gallery-slide`, `` + (i + 1));
 // }
-
+export const central = document.querySelector(`.central`);
 // Function for making templates
 export const makeTemplate = (module, id, prevEl) =>{
   const container = document.createElement(`template`);
@@ -14,10 +14,10 @@ export const makeTemplate = (module, id, prevEl) =>{
 // Function for displaying templates
 export const show = (slide) => {
   const clone = document.importNode(slide.content, true);
-  while (document.querySelector(`.central`).firstChild) {
-    document.querySelector(`.central`).removeChild(document.querySelector(`.central`).firstChild);
+  while (central.firstChild) {
+    central.removeChild(central.firstChild);
   }
-  document.querySelector(`.central`).appendChild(clone);
+  central.appendChild(clone);
 };
 
 

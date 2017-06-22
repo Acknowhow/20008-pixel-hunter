@@ -1,4 +1,5 @@
-const moduleRules = `
+import {makeTemplate} from './../module_constructor.js';
+export const moduleRules = `
 <header class="header">
   <div class="header__back">
     <span class="back">
@@ -20,10 +21,7 @@ const moduleRules = `
     <button class="rules__button  continue" type="submit" disabled>Go!</button>
   </form>
 </div>`;
-export const templateRules = (template) => {
-  const container = document.createElement(`template`);
-  container.id = `rules`;
-  container.innerHTML = moduleRules;
-  document.querySelector(`#greeting`).after(container);
-};
+export const makeRulesTemplate = () => {
+  makeTemplate(moduleRules, `rules`, document.querySelector(`#greeting`));
+}
 

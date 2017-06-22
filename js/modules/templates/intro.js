@@ -1,6 +1,8 @@
+import {central} from './../module_constructor';
 import {makeTemplate} from './../module_constructor.js';
 import {show} from './../module_constructor.js';
-
+import {makeGreetingTemplate} from './greeting.js';
+import {showGreetingTemplate} from './greeting.js';
 const moduleIntro = `<main id="main" class="central__content">
     <div id="intro" class="intro">
       <h1 class="intro__asterisk">*</h1>
@@ -18,10 +20,25 @@ const moduleIntro = `<main id="main" class="central__content">
     </div>
  </footer>
 `;
-makeTemplate(moduleIntro, `introduction`, document.querySelector(`.central`));
+const makeIntroTemplate = () => {
+  makeTemplate(moduleIntro, `introduction`, central);
+}
+makeIntroTemplate();
 export const showIntroTemplate = () => {
   show(document.querySelector(`#introduction`));
-}
+  let next = (ev) => {
+    if (ev.target === document.querySelector(`.intro__asterisk`)) {
+      makeGreetingTemplate();
+      showGreetingTemplate();
+    }
+  };
+  central.addEventListener(`click`, function (e) {
+    next(e);
+  });
+  central.removeEventListener(`click`, function (e) {
+    next(e);
+  });
+};
 
 //  document.querySelector(`.central`).addEventListener(`click`, function (e) {
 //   if (e.target === document.querySelector(`.intro__asterisk`)) {
