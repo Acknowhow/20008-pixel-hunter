@@ -53,12 +53,11 @@ const moduleGame1 = `<header class="header">
       </ul>
     </div>
   </div>`;
-const templateGame1 = (template) =>{
+export const templateGame1 = (template) =>{
   const container = document.createElement(`template`);
   container.id = `game-1`;
   container.innerHTML = moduleGame1;
   document.querySelector(`#rules`).after(container);
 };
-templateGame1(moduleGame1);
-export default templateGame1;
+
 

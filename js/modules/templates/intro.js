@@ -1,5 +1,6 @@
-import show from './../module_slideshow.js';
-import i from './../module_slideshow.js';
+import {makeTemplate} from './../module_constructor.js';
+import {show} from './../module_constructor.js';
+
 const moduleIntro = `<main id="main" class="central__content">
     <div id="intro" class="intro">
       <h1 class="intro__asterisk">*</h1>
@@ -17,17 +18,15 @@ const moduleIntro = `<main id="main" class="central__content">
     </div>
  </footer>
 `;
-export const templateIntro = (template) =>{
-  const container = document.createElement(`template`);
-  container.id = `introduction`;
-  container.innerHTML = moduleIntro;
-  document.querySelector(`.central`).after(container);
-  let clone = document.importNode(container.content, true);
-  document.querySelector(`.central`).appendChild(clone);
-};
+makeTemplate(moduleIntro, `introduction`, document.querySelector(`.central`));
+export const showIntroTemplate = () => {
+  show(document.querySelector(`#introduction`));
+}
 
-document.querySelector(`.central`).addEventListener(`click`, function (e) {
-  if (e.target === document.querySelector(`.intro__asterisk`)) {
-    document.body.style.background = `red`;
-  }
-});
+//  document.querySelector(`.central`).addEventListener(`click`, function (e) {
+//   if (e.target === document.querySelector(`.intro__asterisk`)) {
+//     i = nextPos;
+//     show(nextTemplate);
+//   }
+//   return i;
+//  });

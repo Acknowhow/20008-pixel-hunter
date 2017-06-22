@@ -20,12 +20,10 @@ const moduleRules = `
     <button class="rules__button  continue" type="submit" disabled>Go!</button>
   </form>
 </div>`;
-const templateRules = (template) => {
+export const templateRules = (template) => {
   const container = document.createElement(`template`);
   container.id = `rules`;
   container.innerHTML = moduleRules;
   document.querySelector(`#greeting`).after(container);
 };
-templateRules(moduleRules);
-
 

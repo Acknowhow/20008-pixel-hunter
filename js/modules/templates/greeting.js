@@ -1,4 +1,4 @@
-const moduleGreeting = `<div class="greeting central--blur">
+export const moduleGreeting = `<div class="greeting central--blur">
     <div class="greeting__logo"><img src="img/logo_big.png" width="201" height="89" alt="Pixel Hunter"></div>
     <h1 class="greeting__asterisk">*</h1>
     <div class="greeting__challenge">
@@ -21,12 +21,10 @@ const moduleGreeting = `<div class="greeting central--blur">
       <a href="https://vk.com/htmlacademy" class="social-link  social-link--vk">Вконтакте</a>
     </div>
   </footer>`;
-const templateGreeting = (template) => {
+export const templateGreeting = (template) => {
   const container = document.createElement(`template`);
   container.id = `greeting`;
   container.innerHTML = moduleGreeting;
   document.querySelector(`#introduction`).after(container);
 };
-templateGreeting(moduleGreeting);
-
 
