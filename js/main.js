@@ -1,14 +1,15 @@
-import './modules/module_slideshow.js';
-import './modules/templates/intro.js';
-import './modules/templates/greeting.js';
-import './modules/templates/rules.js';
-import './modules/templates/game-1.js';
-import './modules/templates/game-2.js';
-import './modules/templates/game-3.js';
-import './modules/templates/stats.js';
+
+import {templateIntro} from './modules/templates/intro.js';
+// import './modules/templates/greeting.js';
+// import './modules/templates/rules.js';
+// import './modules/templates/game-1.js';
+// import './modules/templates/game-2.js';
+// import './modules/templates/game-3.js';
+// import './modules/templates/stats.js';
 
 
 (function () {
+  templateIntro();
   let temps = document.querySelectorAll(`template`);
   let tempsArr = [];
   // Attach data-attributes for future scrolling

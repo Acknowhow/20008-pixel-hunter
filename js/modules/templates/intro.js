@@ -1,4 +1,4 @@
-const moduleIntro = `<main id="main" class="central__content">
+export const moduleIntro = `<main id="main" class="central__content">
     <div id="intro" class="intro">
       <h1 class="intro__asterisk">*</h1>
       <p class="intro__motto"><sup>*</sup> Это не фото. Это рисунок маслом нидерландского художника-фотореалиста Tjalf Sparnaay.</p>
@@ -15,7 +15,7 @@ const moduleIntro = `<main id="main" class="central__content">
     </div>
  </footer>
 `;
-const templateIntro = (template) =>{
+export const templateIntro = (template) =>{
   const container = document.createElement(`template`);
   container.id = `introduction`;
   container.innerHTML = moduleIntro;
@@ -23,4 +23,9 @@ const templateIntro = (template) =>{
   let clone = document.importNode(container.content, true);
   document.querySelector(`.central`).appendChild(clone);
 };
-templateIntro(moduleIntro);
+
+document.querySelector(`.central`).addEventListener(`click`, function (e) {
+  if (e.target === document.querySelector(`.intro__asterisk`)) {
+    document.body.style.background = `red`;
+  }
+});
