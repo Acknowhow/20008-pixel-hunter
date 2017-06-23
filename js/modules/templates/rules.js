@@ -1,7 +1,7 @@
-import {central} from './../module_constructor';
 import {makeTemplate} from './../module_constructor.js';
 import {show} from './../module_constructor.js';
 import {makeGame1Template} from './game-1.js';
+import {showGame1Template} from './game-1.js';
 export const moduleRules = `
 <header class="header">
   <div class="header__back">
@@ -29,16 +29,38 @@ export const makeRulesTemplate = () => {
 };
 export const showRulesTemplate = () => {
   show(document.querySelector(`#rules`));
-  let next = (ev) => {
-    if (ev.target === document.querySelector(`img[alt='Next']`)) {
-      makeRulesTemplate();
-      show(document.querySelector(`#rules`));
+  const rulesInput = document.querySelector(`.rules__input`);
+  const rulesButton = document.querySelector(`.rules__button`);
+  let empty = (ev) => {
+    if (ev.target === rulesInput) {
+      rulesInput.addEventListener(`input`, function () {
+        if (rulesButton.hasAttribute(`disabled`)) {
+          rulesButton.removeAttribute(`disabled`);
+        }
+      });
+      rulesInput.removeEventListener(`input`, function () {
+        if (rulesButton.hasAttribute(`disabled`)) {
+          rulesButton.removeAttribute(`disabled`);
+        }
+      });
     }
   };
-  central.addEventListener(`click`, function (e) {
+  let next = (ev) => {
+    if (ev.target === rulesButton) {
+      makeGame1Template();
+      showGame1Template();
+    }
+  }
+  rulesInput.addEventListener(`keydown`, function (e) {
+    empty(e);
+  });
+  rulesInput.removeEventListener(`keydown`, function (e) {
+    empty(e);
+  });
+  rulesButton.addEventListener(`click`, function (e) {
     next(e);
   });
-  central.removeEventListener(`click`, function (e) {
+  rulesButton.removeEventListener(`click`, function (e) {
     next(e);
   });
 };

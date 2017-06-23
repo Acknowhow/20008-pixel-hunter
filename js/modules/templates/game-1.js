@@ -1,4 +1,3 @@
-import {central} from './../module_constructor';
 import {makeTemplate} from './../module_constructor.js';
 import {show} from './../module_constructor.js';
 const moduleGame1 = `<header class="header">
@@ -59,4 +58,6 @@ const moduleGame1 = `<header class="header">
 export const makeGame1Template = () => {
   makeTemplate(moduleGame1, `game-1`, document.querySelector(`#rules`));
 }
-
+export const showGame1Template = () => {
+  show(document.querySelector(`#game-1`));
+}
