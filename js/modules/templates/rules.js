@@ -50,7 +50,7 @@ export const showRulesTemplate = () => {
       makeGame1Template();
       showGame1Template();
     }
-  }
+  };
   rulesInput.addEventListener(`keydown`, function (e) {
     empty(e);
   });

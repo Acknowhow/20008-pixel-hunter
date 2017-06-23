@@ -22,7 +22,7 @@ const moduleIntro = `<main id="main" class="central__content">
 `;
 const makeIntroTemplate = () => {
   makeTemplate(moduleIntro, `introduction`, central);
-}
+};
 makeIntroTemplate();
 export const showIntroTemplate = () => {
   show(document.querySelector(`#introduction`));

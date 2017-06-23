@@ -57,7 +57,7 @@ const moduleGame1 = `<header class="header">
   </div>`;
 export const makeGame1Template = () => {
   makeTemplate(moduleGame1, `game-1`, document.querySelector(`#rules`));
-}
+};
 export const showGame1Template = () => {
   show(document.querySelector(`#game-1`));
-}
+};
