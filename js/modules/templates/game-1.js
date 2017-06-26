@@ -1,3 +1,4 @@
+import {central} from './../module_constructor';
 import {makeTemplate} from './../module_constructor.js';
 import {show} from './../module_constructor.js';
 const moduleGame1 = `<header class="header">
@@ -60,4 +61,43 @@ export const makeGame1Template = () => {
 };
 export const showGame1Template = () => {
   show(document.querySelector(`#game-1`));
+  const option1Answers = document.querySelector(`.game__content`).children[0].querySelectorAll(`label`);
+  const option2Answers = document.querySelector(`.game__content`).children[1].querySelectorAll(`label`);
+  const option1Array = [];
+  const option2Array = [];
+  let option1;
+  let option2;
+  const checkAnswers = (targ, arr) => {
+    if (!targ.getAttribute(`checked`)) {
+      targ.setAttribute(`checked`, `true`);
+    }
+    const checked = (t) => {
+      return t.getAttribute(`checked`);
+    };
+    if (arr.some(checked)) {
+      return true;
+    }
+    return false;
+  };
+  const bothAnswers = (ev) => {
+    Array.prototype.push.apply(option1Array, option1Answers);
+    Array.prototype.push.apply(option2Array, option2Answers);
+    let target = ev.target;
+    if (target.tagName !== `SPAN`) {
+      return;
+    }
+    if (target in option1Answers) {
+      option1 = checkAnswers(target, option1Answers);
+    }
+    option2 = checkAnswers(target, option2Answers);
+    if (option1 && option2) {
+      show(document.querySelector(`#game-2`));
+    }
+  };
+  central.addEventListener(`click`, function (e) {
+    bothAnswers(e);
+  });
+  central.removeEventListener(`click`, function (e) {
+    bothAnswers(e);
+  });
 };
