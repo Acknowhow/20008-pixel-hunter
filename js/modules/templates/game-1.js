@@ -1,6 +1,8 @@
 import {central} from './../module_constructor';
 import {makeTemplate} from './../module_constructor.js';
 import {show} from './../module_constructor.js';
+import {makeGame2Template} from './game-2.js';
+import {showGame2Template} from './game-2';
 const moduleGame1 = `<header class="header">
     <div class="header__back">
       <span class="back">
@@ -61,43 +63,21 @@ export const makeGame1Template = () => {
 };
 export const showGame1Template = () => {
   show(document.querySelector(`#game-1`));
-  const option1Answers = document.querySelector(`.game__content`).children[0].querySelectorAll(`label`);
-  const option2Answers = document.querySelector(`.game__content`).children[1].querySelectorAll(`label`);
-  const option1Array = [];
-  const option2Array = [];
-  let option1;
-  let option2;
-  const checkAnswers = (targ, arr) => {
-    if (!targ.getAttribute(`checked`)) {
-      targ.setAttribute(`checked`, `true`);
-    }
-    const checked = (t) => {
-      return t.getAttribute(`checked`);
-    };
-    if (arr.some(checked)) {
-      return true;
-    }
-    return false;
+  // Select all inputs in option1
+  const answers1 = document.querySelector(`.game__content`).children[0].querySelectorAll(`input`);
+  // Select all inputs in option2
+  const answers2 = document.querySelector(`.game__content`).children[1].querySelectorAll(`input`);
+  const answers1Arr = [];
+  const answers2Arr = [];
+  Array.prototype.push.apply(answers1Arr, answers1);
+  Array.prototype.push.apply(answers2Arr, answers2);
+  const check = (a) => {
+    return a.checked === true;
   };
-  const bothAnswers = (ev) => {
-    Array.prototype.push.apply(option1Array, option1Answers);
-    Array.prototype.push.apply(option2Array, option2Answers);
-    let target = ev.target;
-    if (target.tagName !== `SPAN`) {
-      return;
+  document.querySelector(`.game__content`).addEventListener(`click`, function (e) {
+    if (answers1Arr.some(check) && answers2Arr.some(check) === true) {
+      makeGame2Template();
+      showGame2Template();
     }
-    if (target in option1Answers) {
-      option1 = checkAnswers(target, option1Answers);
-    }
-    option2 = checkAnswers(target, option2Answers);
-    if (option1 && option2) {
-      show(document.querySelector(`#game-2`));
-    }
-  };
-  central.addEventListener(`click`, function (e) {
-    bothAnswers(e);
-  });
-  central.removeEventListener(`click`, function (e) {
-    bothAnswers(e);
   });
 };
