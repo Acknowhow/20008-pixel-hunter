@@ -1,5 +1,7 @@
 import {makeTemplate} from './../module_constructor.js';
 import {show} from './../module_constructor.js';
+import {makeGame3Template} from './game-3.js';
+import {showGame3Template} from './game-3';
 const moduleGame2 = `<header class="header">
     <div class="header__back">
       <span class="back">
@@ -49,5 +51,19 @@ export const makeGame2Template = () => {
 };
 export const showGame2Template = () => {
   show(document.querySelector(`#game-2`));
+  const check = (ev) => {
+    if (ev.target.tagName === `SPAN`) {
+      makeGame3Template();
+      showGame3Template();
+    }
+    return false;
+  };
+  document.querySelector(`.central`).addEventListener(`click`, function (e) {
+    check(e);
+  });
+  document.querySelector(`.central`).removeEventListener(`click`, function (e) {
+    check(e);
+  });
 }
+
 

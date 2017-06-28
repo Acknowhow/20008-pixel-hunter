@@ -1,3 +1,4 @@
+import {showIntroTemplate} from './intro';
 import {makeTemplate} from './../module_constructor.js';
 import {show} from './../module_constructor.js';
 import {makeGame1Template} from './game-1.js';

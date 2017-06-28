@@ -39,11 +39,3 @@ export const showIntroTemplate = () => {
     next(e);
   });
 };
-
-//  document.querySelector(`.central`).addEventListener(`click`, function (e) {
-//   if (e.target === document.querySelector(`.intro__asterisk`)) {
-//     i = nextPos;
-//     show(nextTemplate);
-//   }
-//   return i;
-//  });

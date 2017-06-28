@@ -1,8 +1,7 @@
-import {central} from './../module_constructor';
 import {makeTemplate} from './../module_constructor.js';
 import {show} from './../module_constructor.js';
 import {makeGame2Template} from './game-2.js';
-import {showGame2Template} from './game-2';
+import {showGame2Template} from './game-2.js';
 const moduleGame1 = `<header class="header">
     <div class="header__back">
       <span class="back">
@@ -71,11 +70,17 @@ export const showGame1Template = () => {
   const answers2Arr = [];
   Array.prototype.push.apply(answers1Arr, answers1);
   Array.prototype.push.apply(answers2Arr, answers2);
-  const check = (a) => {
+  const checkArr = (a) => {
     return a.checked === true;
   };
   document.querySelector(`.game__content`).addEventListener(`click`, function (e) {
-    if (answers1Arr.some(check) && answers2Arr.some(check) === true) {
+    if (answers1Arr.some(checkArr) && answers2Arr.some(checkArr) === true) {
+      makeGame2Template();
+      showGame2Template();
+    }
+  });
+  document.querySelector(`.game__content`).removeEventListener(`click`, function (e) {
+    if (answers1Arr.some(checkArr) && answers2Arr.some(checkArr) === true) {
       makeGame2Template();
       showGame2Template();
     }
