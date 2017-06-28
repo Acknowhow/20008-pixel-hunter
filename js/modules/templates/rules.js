@@ -1,8 +1,8 @@
-import {showIntroTemplate} from './intro';
+import {makeIntroTemplate} from './intro';
 import {makeTemplate} from './../module_constructor.js';
-import {show} from './../module_constructor.js';
+// import {show} from './../module_constructor.js';
 import {makeGame1Template} from './game-1.js';
-import {showGame1Template} from './game-1.js';
+// import {showGame1Template} from './game-1.js';
 export const moduleRules = `
 <header class="header">
   <div class="header__back">
@@ -26,10 +26,7 @@ export const moduleRules = `
   </form>
 </div>`;
 export const makeRulesTemplate = () => {
-  makeTemplate(moduleRules, `rules`, document.querySelector(`#greeting`));
-};
-export const showRulesTemplate = () => {
-  show(document.querySelector(`#rules`));
+  makeTemplate(moduleRules);
   const rulesInput = document.querySelector(`.rules__input`);
   const rulesButton = document.querySelector(`.rules__button`);
   const linkBack = document.querySelector(`.header__back`);
@@ -50,7 +47,6 @@ export const showRulesTemplate = () => {
   let next = (ev) => {
     if (ev.target === rulesButton) {
       makeGame1Template();
-      showGame1Template();
     }
   };
   rulesInput.addEventListener(`keydown`, function (e) {
@@ -66,10 +62,11 @@ export const showRulesTemplate = () => {
     next(e);
   });
   linkBack.addEventListener(`click`, function () {
-    showIntroTemplate();
+    makeIntroTemplate();
   });
   linkBack.removeEventListener(`click`, function () {
-    showIntroTemplate();
+    makeIntroTemplate();
   });
 };
+
 

@@ -1,6 +1,5 @@
-import {showIntroTemplate} from './intro';
 import {makeTemplate} from './../module_constructor.js';
-import {show} from './../module_constructor.js';
+import {makeIntroTemplate} from './intro';
 const moduleStats = `<header class="header">
     <div class="header__back">
       <span class="back">
@@ -110,15 +109,12 @@ const moduleStats = `<header class="header">
     </table>
   </div>`;
 export const makeStatsTemplate = () => {
-  makeTemplate(moduleStats, `stats`, document.querySelector(`#game-3`));
-};
-export const showStatsTemplate = () => {
-  show(document.querySelector(`#stats`));
+  makeTemplate(moduleStats);
   const linkBack = document.querySelector(`.header__back`);
   linkBack.addEventListener(`click`, function () {
-    showIntroTemplate();
+    makeIntroTemplate();
   });
   linkBack.removeEventListener(`click`, function () {
-    showIntroTemplate();
+    makeIntroTemplate();
   });
 };

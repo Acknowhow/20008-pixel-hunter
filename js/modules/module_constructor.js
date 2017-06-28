@@ -1,17 +1,12 @@
 export const central = document.querySelector(`.central`);
-// Function for making templates
-export const makeTemplate = (module, id) =>{
+// Function for inserting screens directly into container
+export const makeTemplate = (module) =>{
   const container = document.createElement(`template`);
-  container.id = id;
   container.innerHTML = module;
+  while (central.firstChild) {
+    central.removeChild(central.firstChild);
+  }
   central.appendChild(container.content);
 };
-// // Function for displaying templates
-// export const show = (slide) => {
-//   const clone = document.importNode(slide.content, true);
-//   while (central.firstChild) {
-//     central.removeChild(central.firstChild);
-//   }
-//   central.appendChild(clone);
-// };
+
 

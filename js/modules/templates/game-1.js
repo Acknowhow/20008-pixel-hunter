@@ -1,8 +1,6 @@
-import {showIntroTemplate} from './intro';
 import {makeTemplate} from './../module_constructor.js';
-import {show} from './../module_constructor.js';
+import {makeIntroTemplate} from './intro';
 import {makeGame2Template} from './game-2.js';
-import {showGame2Template} from './game-2.js';
 const moduleGame1 = `<header class="header">
     <div class="header__back">
       <span class="back">
@@ -59,10 +57,7 @@ const moduleGame1 = `<header class="header">
     </div>
   </div>`;
 export const makeGame1Template = () => {
-  makeTemplate(moduleGame1, `game-1`, document.querySelector(`#rules`));
-};
-export const showGame1Template = () => {
-  show(document.querySelector(`#game-1`));
+  makeTemplate(moduleGame1);
   // Select all inputs in option1
   const answers1 = document.querySelector(`.game__content`).children[0].querySelectorAll(`input`);
   // Select all inputs in option2
@@ -75,22 +70,21 @@ export const showGame1Template = () => {
   const checkArr = (a) => {
     return a.checked === true;
   };
-  document.querySelector(`.game__content`).addEventListener(`click`, function (e) {
+  document.querySelector(`.game__content`).addEventListener(`click`, function () {
     if (answers1Arr.some(checkArr) && answers2Arr.some(checkArr) === true) {
       makeGame2Template();
-      showGame2Template();
     }
   });
-  document.querySelector(`.game__content`).removeEventListener(`click`, function (e) {
+  document.querySelector(`.game__content`).removeEventListener(`click`, function () {
     if (answers1Arr.some(checkArr) && answers2Arr.some(checkArr) === true) {
       makeGame2Template();
-      showGame2Template();
     }
   });
   linkBack.addEventListener(`click`, function () {
-    showIntroTemplate();
+    makeIntroTemplate();
   });
   linkBack.removeEventListener(`click`, function () {
-    showIntroTemplate();
+    makeIntroTemplate();
   });
 };
+
