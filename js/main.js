@@ -1,4 +1,4 @@
-import {showIntroTemplate} from './modules/templates/intro.js';
+import {makeIntroTemplate} from './modules/templates/intro.js';
 (function () {
-  showIntroTemplate();
+  makeIntroTemplate();
 })();
