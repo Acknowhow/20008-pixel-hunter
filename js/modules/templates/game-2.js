@@ -1,3 +1,4 @@
+import {showIntroTemplate} from './intro';
 import {makeTemplate} from './../module_constructor.js';
 import {show} from './../module_constructor.js';
 import {makeGame3Template} from './game-3.js';
@@ -51,6 +52,7 @@ export const makeGame2Template = () => {
 };
 export const showGame2Template = () => {
   show(document.querySelector(`#game-2`));
+  const linkBack = document.querySelector(`.header__back`);
   const check = (ev) => {
     if (ev.target.tagName === `SPAN`) {
       makeGame3Template();
@@ -64,6 +66,12 @@ export const showGame2Template = () => {
   document.querySelector(`.central`).removeEventListener(`click`, function (e) {
     check(e);
   });
-}
+  linkBack.addEventListener(`click`, function () {
+    showIntroTemplate();
+  });
+  linkBack.removeEventListener(`click`, function () {
+    showIntroTemplate();
+  });
+};
 
 

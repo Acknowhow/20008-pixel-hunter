@@ -32,6 +32,7 @@ export const showRulesTemplate = () => {
   show(document.querySelector(`#rules`));
   const rulesInput = document.querySelector(`.rules__input`);
   const rulesButton = document.querySelector(`.rules__button`);
+  const linkBack = document.querySelector(`.header__back`);
   let empty = (ev) => {
     if (ev.target === rulesInput) {
       rulesInput.addEventListener(`input`, function () {
@@ -63,6 +64,12 @@ export const showRulesTemplate = () => {
   });
   rulesButton.removeEventListener(`click`, function (e) {
     next(e);
+  });
+  linkBack.addEventListener(`click`, function () {
+    showIntroTemplate();
+  });
+  linkBack.removeEventListener(`click`, function () {
+    showIntroTemplate();
   });
 };
 

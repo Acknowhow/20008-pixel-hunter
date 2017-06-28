@@ -1,3 +1,6 @@
+import {showIntroTemplate} from './intro';
+import {makeTemplate} from './../module_constructor.js';
+import {show} from './../module_constructor.js';
 const moduleStats = `<header class="header">
     <div class="header__back">
       <span class="back">
@@ -106,9 +109,16 @@ const moduleStats = `<header class="header">
       </tr>
     </table>
   </div>`;
-export const templateStats = (template) =>{
-  const container = document.createElement(`template`);
-  container.id = `stats`;
-  container.innerHTML = moduleStats;
-  document.querySelector(`#game-3`).after(container);
+export const makeStatsTemplate = () => {
+  makeTemplate(moduleStats, `stats`, document.querySelector(`#game-3`));
+};
+export const showStatsTemplate = () => {
+  show(document.querySelector(`#stats`));
+  const linkBack = document.querySelector(`.header__back`);
+  linkBack.addEventListener(`click`, function () {
+    showIntroTemplate();
+  });
+  linkBack.removeEventListener(`click`, function () {
+    showIntroTemplate();
+  });
 };

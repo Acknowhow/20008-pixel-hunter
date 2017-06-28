@@ -1,3 +1,4 @@
+import {showIntroTemplate} from './intro';
 import {makeTemplate} from './../module_constructor.js';
 import {show} from './../module_constructor.js';
 import {makeGame2Template} from './game-2.js';
@@ -68,6 +69,7 @@ export const showGame1Template = () => {
   const answers2 = document.querySelector(`.game__content`).children[1].querySelectorAll(`input`);
   const answers1Arr = [];
   const answers2Arr = [];
+  const linkBack = document.querySelector(`.header__back`);
   Array.prototype.push.apply(answers1Arr, answers1);
   Array.prototype.push.apply(answers2Arr, answers2);
   const checkArr = (a) => {
@@ -84,5 +86,11 @@ export const showGame1Template = () => {
       makeGame2Template();
       showGame2Template();
     }
+  });
+  linkBack.addEventListener(`click`, function () {
+    showIntroTemplate();
+  });
+  linkBack.removeEventListener(`click`, function () {
+    showIntroTemplate();
   });
 };
