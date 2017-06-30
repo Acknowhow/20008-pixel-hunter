@@ -3,7 +3,7 @@ import {makeTemplate} from './../module_constructor.js';
 // import {show} from './../module_constructor.js';
 import {makeGame1Template} from './game-1.js';
 // import {showGame1Template} from './game-1.js';
-export const moduleRules = `
+export const contentRules = `
 <header class="header">
   <div class="header__back">
     <span class="back">
@@ -26,7 +26,7 @@ export const moduleRules = `
   </form>
 </div>`;
 export const makeRulesTemplate = () => {
-  makeTemplate(moduleRules);
+  makeTemplate(contentRules);
   const rulesInput = document.querySelector(`.rules__input`);
   const rulesButton = document.querySelector(`.rules__button`);
   const linkBack = document.querySelector(`.header__back`);
