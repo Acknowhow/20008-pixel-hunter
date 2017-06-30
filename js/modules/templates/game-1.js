@@ -2,7 +2,7 @@ import {contentFooter} from './footer';
 import {makeTemplate} from './../module_constructor.js';
 import {makeIntroTemplate} from './intro';
 import {makeGame2Template} from './game-2.js';
-const moduleGame1 = `<header class="header">
+const contentGame1 = `<header class="header">
     <div class="header__back">
       <span class="back">
         <img src="img/arrow_left.svg" width="45" height="45" alt="Back">
@@ -58,7 +58,7 @@ const moduleGame1 = `<header class="header">
     </div>
   </div>`;
 export const makeGame1Template = () => {
-  makeTemplate(moduleGame1, contentFooter);
+  makeTemplate(contentGame1, contentFooter);
   // First options screen
   const opts1 = document.querySelector(`form > div:nth-child(1)`);
   // Second options screen

@@ -1,6 +1,7 @@
+import {contentFooter} from './footer';
 import {makeTemplate} from './../module_constructor.js';
 import {makeIntroTemplate} from './intro';
-const moduleStats = `<header class="header">
+const contentStats = `<header class="header">
     <div class="header__back">
       <span class="back">
         <img src="img/arrow_left.svg" width="45" height="45" alt="Back">
@@ -109,7 +110,7 @@ const moduleStats = `<header class="header">
     </table>
   </div>`;
 export const makeStatsTemplate = () => {
-  makeTemplate(moduleStats);
+  makeTemplate(contentStats, contentFooter);
   const linkBack = document.querySelector(`.header__back`);
   const switchBack = (ev) => {
     if (ev.currentTarget === linkBack) {
