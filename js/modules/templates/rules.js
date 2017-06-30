@@ -1,8 +1,8 @@
-import {contentFooter} from './footer.js';
+import {templateFooter} from './footer.js';
 import {makeIntroTemplate} from './intro';
 import {makeTemplate} from './../module_constructor.js';
 import {makeGame1Template} from './game-1.js';
-export const contentRules = `
+export const moduleRules = `
 <header class="header">
   <div class="header__back">
     <span class="back">
@@ -25,7 +25,7 @@ export const contentRules = `
   </form>
 </div>`;
 export const makeRulesTemplate = () => {
-  makeTemplate(contentRules, contentFooter);
+  makeTemplate(moduleRules, templateFooter);
   const rulesInput = document.querySelector(`.rules__input`);
   const rulesButton = document.querySelector(`.rules__button`);
   const linkBack = document.querySelector(`.header__back`);

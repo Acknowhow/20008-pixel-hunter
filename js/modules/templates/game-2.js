@@ -1,8 +1,8 @@
-import {contentFooter} from './footer';
+import {templateFooter} from './footer';
 import {makeTemplate} from './../module_constructor.js';
 import {makeIntroTemplate} from './intro';
 import {makeGame3Template} from './game-3.js';
-const contentGame2 = `<header class="header">
+const templateGame2 = `<header class="header">
     <div class="header__back">
       <span class="back">
         <img src="img/arrow_left.svg" width="45" height="45" alt="Back">
@@ -47,7 +47,7 @@ const contentGame2 = `<header class="header">
     </div>
   </div>`;
 export const makeGame2Template = () => {
-  makeTemplate(contentGame2, contentFooter);
+  makeTemplate(templateGame2, templateFooter);
   const linkBack = document.querySelector(`.header__back`);
   const opt = document.querySelector(`.game__option`);
   const answer1 = document.querySelector(`.game__answer--photo`).children[0];
