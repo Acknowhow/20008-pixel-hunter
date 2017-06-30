@@ -1,21 +1,9 @@
+import {templateHeader} from './header';
 import {templateFooter} from './footer';
 import {makeTemplate} from './../module_constructor.js';
 import {makeIntroTemplate} from './intro';
 import {makeGame2Template} from './game-2.js';
-const templateGame1 = `<header class="header">
-    <div class="header__back">
-      <span class="back">
-        <img src="img/arrow_left.svg" width="45" height="45" alt="Back">
-        <img src="img/logo_small.png" width="101" height="44">
-      </span>
-    </div>
-    <h1 class="game__timer">NN</h1>
-    <div class="game__lives">
-      <img src="img/heart__empty.svg" class="game__heart" alt="Life" width="32" height="32">
-      <img src="img/heart__full.svg" class="game__heart" alt="Life" width="32" height="32">
-      <img src="img/heart__full.svg" class="game__heart" alt="Life" width="32" height="32">
-    </div>
-  </header>
+const templateGame1 = `
   <div class="game">
     <p class="game__task">Угадайте для каждого изображения фото или рисунок?</p>
     <form class="game__content">
@@ -58,7 +46,7 @@ const templateGame1 = `<header class="header">
     </div>
   </div>`;
 export const makeGame1Template = () => {
-  makeTemplate(templateGame1, templateFooter);
+  makeTemplate(templateGame1, templateFooter, templateHeader);
   // First options screen
   const opts1 = document.querySelector(`form > div:nth-child(1)`);
   // Second options screen

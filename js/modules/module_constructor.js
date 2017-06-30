@@ -1,6 +1,6 @@
 export const central = document.querySelector(`.central`);
 // Function for inserting screens directly into container
-export const makeTemplate = (templateMain, templateFooter) =>{
+export const makeTemplate = (templateMain, templateFooter, templateHeader) =>{
   const container = document.createElement(`template`);
   const footer = document.createElement(`footer`);
   footer.classList.add(`footer`);
@@ -11,4 +11,8 @@ export const makeTemplate = (templateMain, templateFooter) =>{
   }
   central.appendChild(container.content);
   central.appendChild(footer);
+  if (!templateHeader) {
+    return;
+  }
+  central.insertAdjacentHTML(`afterbegin`, templateHeader);
 };
