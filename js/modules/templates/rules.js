@@ -30,43 +30,33 @@ export const makeRulesTemplate = () => {
   const rulesInput = document.querySelector(`.rules__input`);
   const rulesButton = document.querySelector(`.rules__button`);
   const linkBack = document.querySelector(`.header__back`);
-  let empty = (ev) => {
-    if (ev.target === rulesInput) {
-      rulesInput.addEventListener(`input`, function () {
-        if (rulesButton.hasAttribute(`disabled`)) {
-          rulesButton.removeAttribute(`disabled`);
-        }
-      });
-      rulesInput.removeEventListener(`input`, function () {
-        if (rulesButton.hasAttribute(`disabled`)) {
-          rulesButton.removeAttribute(`disabled`);
-        }
-      });
+  const switchBack = (ev) => {
+    if (ev.currentTarget === linkBack) {
+      linkBack.removeEventListener(`click`, switchBack);
+      makeIntroTemplate();
     }
   };
-  let next = (ev) => {
+  const enable = () => {
+    if (rulesButton.hasAttribute(`disabled`)) {
+      rulesButton.removeAttribute(`disabled`);
+    }
+  };
+  const empty = (ev) => {
+    if (ev.target === rulesInput) {
+      rulesInput.addEventListener(`input`, enable);
+    }
+  };
+  const next = (ev) => {
     if (ev.target === rulesButton) {
+      rulesInput.removeEventListener(`input`, enable);
+      rulesInput.removeEventListener(`keydown`, empty);
+      rulesButton.removeEventListener(`click`, next);
       makeGame1Template();
     }
   };
-  rulesInput.addEventListener(`keydown`, function (e) {
-    empty(e);
-  });
-  rulesInput.removeEventListener(`keydown`, function (e) {
-    empty(e);
-  });
-  rulesButton.addEventListener(`click`, function (e) {
-    next(e);
-  });
-  rulesButton.removeEventListener(`click`, function (e) {
-    next(e);
-  });
-  linkBack.addEventListener(`click`, function () {
-    makeIntroTemplate();
-  });
-  linkBack.removeEventListener(`click`, function () {
-    makeIntroTemplate();
-  });
+  rulesInput.addEventListener(`keydown`, empty);
+  rulesButton.addEventListener(`click`, next);
+  linkBack.addEventListener(`click`, switchBack);
 };
 
 

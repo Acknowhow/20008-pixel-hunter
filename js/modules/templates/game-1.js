@@ -58,6 +58,10 @@ const moduleGame1 = `<header class="header">
   </div>`;
 export const makeGame1Template = () => {
   makeTemplate(moduleGame1);
+  // First options screen
+  const opts1 = document.querySelector(`form > div:nth-child(1)`);
+  // Second options screen
+  const opts2 = document.querySelector(`form > div:nth-child(2)`);
   // Select all inputs in option1
   const answers1 = document.querySelector(`.game__content`).children[0].querySelectorAll(`input`);
   // Select all inputs in option2
@@ -67,24 +71,31 @@ export const makeGame1Template = () => {
   const linkBack = document.querySelector(`.header__back`);
   Array.prototype.push.apply(answers1Arr, answers1);
   Array.prototype.push.apply(answers2Arr, answers2);
+  const switchBack = (ev) => {
+    if (ev.currentTarget === linkBack) {
+      linkBack.removeEventListener(`click`, switchBack);
+      makeIntroTemplate();
+    }
+  };
   const checkArr = (a) => {
     return a.checked === true;
   };
-  document.querySelector(`.game__content`).addEventListener(`click`, function () {
-    if (answers1Arr.some(checkArr) && answers2Arr.some(checkArr) === true) {
+  const checkOpt1 = () => {
+    if (answers2Arr.some(checkArr) === true) {
+      opts1.removeEventListener(`click`, checkOpt1);
+      opts2.removeEventListener(`click`, checkOpt2);
       makeGame2Template();
     }
-  });
-  document.querySelector(`.game__content`).removeEventListener(`click`, function () {
-    if (answers1Arr.some(checkArr) && answers2Arr.some(checkArr) === true) {
+  };
+  const checkOpt2 = () => {
+    if (answers1Arr.some(checkArr) === true) {
+      opts1.removeEventListener(`click`, checkOpt1);
+      opts2.removeEventListener(`click`, checkOpt2);
       makeGame2Template();
     }
-  });
-  linkBack.addEventListener(`click`, function () {
-    makeIntroTemplate();
-  });
-  linkBack.removeEventListener(`click`, function () {
-    makeIntroTemplate();
-  });
+  };
+  opts1.addEventListener(`click`, checkOpt1);
+  opts2.addEventListener(`click`, checkOpt2);
+  linkBack.addEventListener(`click`, switchBack);
 };
 

@@ -1,4 +1,3 @@
-import {central} from './../module_constructor';
 import {makeTemplate} from './../module_constructor.js';
 import {makeIntroTemplate} from './intro';
 import {makeStatsTemplate} from './stats.js';
@@ -46,20 +45,20 @@ const moduleGame3 = `<header class="header">
   </div>`;
 export const makeGame3Template = () => {
   makeTemplate(moduleGame3);
+  const gameContent = document.querySelector(`.game__content`);
   const linkBack = document.querySelector(`.header__back`);
+  const switchBack = (ev) => {
+    if (ev.currentTarget === linkBack) {
+      linkBack.removeEventListener(`click`, switchBack);
+      makeIntroTemplate();
+    }
+  };
   const check = (ev) => {
     if (ev.target.classList.contains(`game__option`)) {
       makeStatsTemplate();
     }
     return false;
   };
-  central.addEventListener(`click`, function (e) {
-    check(e);
-  });
-  linkBack.addEventListener(`click`, function () {
-    makeIntroTemplate();
-  });
-  linkBack.removeEventListener(`click`, function () {
-    makeIntroTemplate();
-  });
+  gameContent.addEventListener(`click`, check);
+  linkBack.addEventListener(`click`, switchBack);
 };

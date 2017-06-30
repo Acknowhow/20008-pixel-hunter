@@ -22,15 +22,9 @@ export const makeIntroTemplate = () => {
   makeTemplate(moduleIntro);
   let next = (ev) => {
     if (ev.target === document.querySelector(`.intro__asterisk`)) {
+      central.removeEventListener(`click`, next);
       makeGreetingTemplate();
     }
   };
-  central.addEventListener(`click`, function (e) {
-    next(e);
-  });
-  central.removeEventListener(`click`, function (e) {
-    next(e);
-  });
+  central.addEventListener(`click`, next);
 };
-
-
