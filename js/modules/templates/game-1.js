@@ -1,4 +1,5 @@
 import {templateHeader} from './header';
+import {initialState} from './data';
 import {templateFooter} from './footer';
 import {makeTemplate} from './../module_constructor.js';
 import {makeIntroTemplate} from './intro';
@@ -46,7 +47,7 @@ const templateGame1 = `
     </div>
   </div>`;
 export const makeGame1Template = () => {
-  makeTemplate(templateGame1, templateFooter, templateHeader);
+  makeTemplate(templateGame1, templateFooter, templateHeader(initialState));
   // First options screen
   const opts1 = document.querySelector(`form > div:nth-child(1)`);
   // Second options screen
