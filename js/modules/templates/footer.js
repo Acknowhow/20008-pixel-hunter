@@ -8,3 +8,4 @@ export const footerContent = `<footer class="footer">
   <a href="https://vk.com/htmlacademy" class="social-link  social-link--vk">Вконтакте</a>
   </div>
   </footer>`;
+
