@@ -48,22 +48,29 @@ const moduleGame2 = `<header class="header">
 export const makeGame2Template = () => {
   makeTemplate(moduleGame2);
   const linkBack = document.querySelector(`.header__back`);
+  const opt = document.querySelector(`.game__option`);
+  const answer1 = document.querySelector(`.game__answer--photo`).children[0];
+  const answer2 = document.querySelector(`.game__answer--paint`).children[0];
+  const answersArr = [];
+  answersArr.push(answer1, answer2);
+  const switchBack = (ev) => {
+    if (ev.currentTarget === linkBack) {
+      linkBack.removeEventListener(`click`, switchBack);
+      makeIntroTemplate();
+    }
+  };
+  const checkArr = (a) => {
+    return a.checked === true;
+  };
   const check = (ev) => {
-    if (ev.target.tagName === `SPAN`) {
+    if (ev.currentTarget !== opt) {
+      return;
+    }
+    if (answersArr.some(checkArr)) {
+      opt.removeEventListener(`click`, check);
       makeGame3Template();
     }
-    return false;
   };
-  document.querySelector(`.central`).addEventListener(`click`, function (e) {
-    check(e);
-  });
-  document.querySelector(`.central`).removeEventListener(`click`, function (e) {
-    check(e);
-  });
-  linkBack.addEventListener(`click`, function () {
-    makeIntroTemplate();
-  });
-  linkBack.removeEventListener(`click`, function () {
-    makeIntroTemplate();
-  });
+  opt.addEventListener(`click`, check);
+  linkBack.addEventListener(`click`, switchBack);
 };

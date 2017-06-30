@@ -28,5 +28,3 @@ export const makeIntroTemplate = () => {
   };
   central.addEventListener(`click`, next);
 };
-
-

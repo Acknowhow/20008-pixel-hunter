@@ -111,10 +111,11 @@ const moduleStats = `<header class="header">
 export const makeStatsTemplate = () => {
   makeTemplate(moduleStats);
   const linkBack = document.querySelector(`.header__back`);
-  linkBack.addEventListener(`click`, function () {
-    makeIntroTemplate();
-  });
-  linkBack.removeEventListener(`click`, function () {
-    makeIntroTemplate();
-  });
+  const switchBack = (ev) => {
+    if (ev.currentTarget === linkBack) {
+      linkBack.removeEventListener(`click`, switchBack);
+      makeIntroTemplate();
+    }
+  };
+  linkBack.addEventListener(`click`, switchBack);
 };

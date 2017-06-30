@@ -8,5 +8,3 @@ export const makeTemplate = (module) =>{
   }
   central.appendChild(container.content);
 };
-
-
