@@ -1,21 +1,10 @@
+import {templateHeader} from './header.js';
+import {data} from './data.js';
 import {templateFooter} from './footer';
 import {makeTemplate} from './../module_constructor.js';
 import {makeIntroTemplate} from './intro';
 import {makeGame3Template} from './game-3.js';
-const templateGame2 = `<header class="header">
-    <div class="header__back">
-      <span class="back">
-        <img src="img/arrow_left.svg" width="45" height="45" alt="Back">
-        <img src="img/logo_small.png" width="101" height="44">
-      </span>
-    </div>
-    <h1 class="game__timer">NN</h1>
-    <div class="game__lives">
-      <img src="img/heart__empty.svg" class="game__heart" alt="Life" width="32" height="32">
-      <img src="img/heart__full.svg" class="game__heart" alt="Life" width="32" height="32">
-      <img src="img/heart__full.svg" class="game__heart" alt="Life" width="32" height="32">
-    </div>
-  </header>
+const templateGame2 = `
   <div class="game">
     <p class="game__task">Угадай, фото или рисунок?</p>
     <form class="game__content  game__content--wide">
@@ -47,7 +36,7 @@ const templateGame2 = `<header class="header">
     </div>
   </div>`;
 export const makeGame2Template = () => {
-  makeTemplate(templateGame2, templateFooter);
+  makeTemplate(templateGame2, templateFooter, templateHeader(data));
   const linkBack = document.querySelector(`.header__back`);
   const opt = document.querySelector(`.game__option`);
   const answer1 = document.querySelector(`.game__answer--photo`).children[0];

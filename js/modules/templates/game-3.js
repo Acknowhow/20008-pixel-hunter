@@ -1,21 +1,10 @@
+import {templateHeader} from './header.js';
+import {data} from './data.js';
 import {templateFooter} from './footer.js';
 import {makeTemplate} from './../module_constructor.js';
 import {makeIntroTemplate} from './intro';
 import {makeStatsTemplate} from './stats.js';
-const templateGame3 = `<header class="header">
-    <div class="header__back">
-      <span class="back">
-        <img src="img/arrow_left.svg" width="45" height="45" alt="Back">
-        <img src="img/logo_small.png" width="101" height="44">
-      </span>
-    </div>
-    <h1 class="game__timer">NN</h1>
-    <div class="game__lives">
-      <img src="img/heart__empty.svg" class="game__heart" alt="Life" width="32" height="32">
-      <img src="img/heart__full.svg" class="game__heart" alt="Life" width="32" height="32">
-      <img src="img/heart__full.svg" class="game__heart" alt="Life" width="32" height="32">
-    </div>
-  </header>
+const templateGame3 = `
   <div class="game">
     <p class="game__task">Найдите рисунок среди изображений</p>
     <form class="game__content  game__content--triple">
@@ -45,7 +34,7 @@ const templateGame3 = `<header class="header">
     </div>
   </div>`;
 export const makeGame3Template = () => {
-  makeTemplate(templateGame3, templateFooter);
+  makeTemplate(templateGame3, templateFooter, templateHeader(data));
   const gameContent = document.querySelector(`.game__content`);
   const linkBack = document.querySelector(`.header__back`);
   const switchBack = (ev) => {
