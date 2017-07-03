@@ -1,5 +1,5 @@
 import {templateHeader} from './header.js';
-import {data} from './data.js';
+import {initialState} from './state/headerInitialState';
 import {templateFooter} from './footer';
 import {makeTemplate} from './../module_constructor.js';
 import {makeIntroTemplate} from './intro';
@@ -36,7 +36,7 @@ const templateGame2 = `
     </div>
   </div>`;
 export const makeGame2Template = () => {
-  makeTemplate(templateGame2, templateFooter, templateHeader(data));
+  makeTemplate(templateGame2, templateFooter, templateHeader(initialState));
   const linkBack = document.querySelector(`.header__back`);
   const opt = document.querySelector(`.game__option`);
   const answer1 = document.querySelector(`.game__answer--photo`).children[0];
