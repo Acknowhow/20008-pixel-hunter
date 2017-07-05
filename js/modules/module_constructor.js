@@ -18,7 +18,5 @@ export const makeTemplate = (templateMain, templateFooter, templateHeader, quest
   if (!questionObj) {
     return;
   }
-  const imgRatio = (imgWidth, imgHeight, maxWidth, maxHeight) =>{
-    let ratio = Math.min(maxWidth / imgWidth, maxHeight / imgHeight);
-  }
+
 };

@@ -5,12 +5,14 @@ import {makeTemplate} from './../module_constructor.js';
 import {makeIntroTemplate} from './intro';
 import {makeGame2Template} from './game-2.js';
 import {questions} from './data/game1Content';
+import {createImgTemplate} from './../question-constructor';
+import {makeQuestion} from './../question-constructor';
+import imagesData from './data/imagesData';
 const templateGame1 = `
   <div class="game">
     <p class="game__task">Угадайте для каждого изображения фото или рисунок?</p>
     <form class="game__content">
       <div class="game__option">
-        <img ${[...Object.entries(questions[`question1`].params)].map((question)=> question).join(` `).replace(/,/g, ``)}>
         <label class="game__answer game__answer--photo">
           <input name=${questions[`question1`]} type="radio" value="photo">
           <span>Фото</span>
@@ -49,6 +51,8 @@ const templateGame1 = `
   </div>`;
 export const makeGame1Template = () => {
   makeTemplate(templateGame1, templateFooter, templateHeader(initialState));
+  const imageStorage = document.querySelector(`form > div:nth-child(1)`).appendChild(createImgTemplate(imagesData, imagesData.paintings[0]));
+  document.querySelector(`form > div:nth-child(1)`).appendChild(makeQuestion(questions, `question1`, imageStorage));
   // First options screen
   const opts1 = document.querySelector(`form > div:nth-child(1)`);
   // Second options screen

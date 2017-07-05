@@ -1,7 +1,8 @@
 export default {
   paintings: [
     // People
-    `https://k42.kn3.net/CF42609C8.jpg`,
+    // Beardman
+    `http://i.imgur.com/5kcp9i0.jpg`,
     // Animals
     `https://k42.kn3.net/D2F0370D6.jpg`,
     // Nature
@@ -9,7 +10,7 @@ export default {
   ],
   photos: [
     // People
-    `http://i.imgur.com/1KegWPz.jpg`,
+    `http://i.imgur.com/egBvykv.jpg`,
     // Animals
     `https://i.imgur.com/DiHM5Zb.jpg`,
     // Nature
