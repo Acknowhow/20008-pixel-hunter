@@ -3,7 +3,7 @@ export const createImgTemplate = (imgSourceData, key) => {
   const imgContainer = document.createElement(`img`);
   imgContainer.src = key;
   return imgContainer;
-}
+};
 
 export const makeQuestion = (imgObj, questionNumber, imageStorageContainer) => {
   let questionWidth = imageStorageContainer.width;
@@ -17,6 +17,6 @@ export const makeQuestion = (imgObj, questionNumber, imageStorageContainer) => {
   imageStorageContainer.width = newWidth;
   imageStorageContainer.height = newHeight;
   return imageStorageContainer;
-}
+};
 
 

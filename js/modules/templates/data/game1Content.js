@@ -25,5 +25,5 @@ export const questions = Object.freeze({
       text: `Рисунок`
     }
   }
-})
+});
 
