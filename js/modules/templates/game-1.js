@@ -4,14 +4,15 @@ import {templateFooter} from './footer';
 import {makeTemplate} from './../module_constructor.js';
 import {makeIntroTemplate} from './intro';
 import {makeGame2Template} from './game-2.js';
+import {questions} from './data/game1Content';
 const templateGame1 = `
   <div class="game">
     <p class="game__task">Угадайте для каждого изображения фото или рисунок?</p>
     <form class="game__content">
       <div class="game__option">
-        <img src="http://placehold.it/468x458" alt="Option 1" width="468" height="458">
+        <img ${[...Object.entries(questions[`question1`].params)].map((question)=> question).join(` `).replace(/,/g, ``)}>
         <label class="game__answer game__answer--photo">
-          <input name="question1" type="radio" value="photo">
+          <input name=${questions[`question1`]} type="radio" value="photo">
           <span>Фото</span>
         </label>
         <label class="game__answer game__answer--paint">

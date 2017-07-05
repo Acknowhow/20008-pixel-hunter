@@ -1,6 +1,6 @@
 export const central = document.querySelector(`.central`);
 // Function for inserting screens directly into container
-export const makeTemplate = (templateMain, templateFooter, templateHeader) =>{
+export const makeTemplate = (templateMain, templateFooter, templateHeader, questionObj) =>{
   const container = document.createElement(`template`);
   const footer = document.createElement(`footer`);
   footer.classList.add(`footer`);
@@ -15,4 +15,10 @@ export const makeTemplate = (templateMain, templateFooter, templateHeader) =>{
     return;
   }
   central.insertAdjacentHTML(`afterbegin`, templateHeader);
+  if (!questionObj) {
+    return;
+  }
+  const imgRatio = (imgWidth, imgHeight, maxWidth, maxHeight) =>{
+    let ratio = Math.min(maxWidth / imgWidth, maxHeight / imgHeight);
+  }
 };
