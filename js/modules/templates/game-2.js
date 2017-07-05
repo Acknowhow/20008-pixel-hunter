@@ -1,5 +1,5 @@
 import {templateHeader} from './header.js';
-import {initialState} from './state/headerInitialState';
+import {initialState} from './data/game1Content';
 import {templateFooter} from './footer';
 import {makeTemplate} from './../module_constructor.js';
 import {makeIntroTemplate} from './intro';
