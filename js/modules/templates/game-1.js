@@ -14,6 +14,7 @@ const templateGame1 = `
     <form class="game__content">
       <div class="game__option">
         <label class="game__answer game__answer--photo">
+          <img>  
           <input name=${questions[`question1`]} type="radio" value="photo">
           <span>Фото</span>
         </label>

@@ -1,4 +1,3 @@
-
 export const createImgTemplate = (imgSourceData, key) => {
   const imgContainer = document.createElement(`img`);
   imgContainer.src = key;
