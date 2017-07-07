@@ -17,3 +17,4 @@ export default {
     `http://i.imgur.com/DKR1HtB.jpg`
   ]
 };
+

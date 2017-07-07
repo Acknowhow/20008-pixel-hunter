@@ -2,6 +2,22 @@ import {templateFooter} from './footer.js';
 import {central} from '../module_constructor';
 import {makeTemplate} from './../module_constructor.js';
 import {makeGreetingTemplate} from './greeting.js';
+export const makePaintingsContainer = (imgObj, container) => {
+  imgObj.paintings.forEach((painting)=> {
+    let eachPainting = new Image();
+    eachPainting.src = painting;
+    Array.prototype.push.apply(container, eachPainting);
+    return container;
+  });
+};
+export const makePhotosContainer = (imgObj, container) => {
+  imgObj.photos.forEach((photo)=> {
+    let eachPhoto = new Image();
+    eachPhoto.src = photo;
+    container.push(eachPhoto);
+    return container;
+  });
+};
 const contentIntro = `<main id="main" class="central__content">
     <div id="intro" class="intro">
       <h1 class="intro__asterisk">*</h1>
