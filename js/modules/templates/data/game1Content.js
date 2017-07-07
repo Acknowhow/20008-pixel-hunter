@@ -11,10 +11,10 @@ export const content = {
 export const questions = Object.freeze({
   'question1': {
     params: {
-      src: `"http://placehold.it/468x458"`,
-      alt: `"Option 1"`,
-      width: `468`,
-      height: `458`,
+      src: `="http://placehold.it/468x458"`,
+      alt: `="Option 1"`,
+      width: `=468`,
+      height: `=458`,
     },
     photo: {
       value: `photo`,

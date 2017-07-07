@@ -12,9 +12,9 @@ const templateGame1 = `
     <p class="game__task">Угадайте для каждого изображения фото или рисунок?</p>
     <form class="game__content">
       <div class="game__option">
-        <label class="game__answer game__answer--photo">
-          <img>  
-          <input name=${questions[`question1`]} type="radio" value="photo">
+        <img ${[...Object.entries(questions[`question1`].params).map((question) => question)].join(` `).replace(/,/g, ` `)}>
+        <label class="game__answer game__answer--photo">  
+          <input name=question1 type="radio" value="photo">
           <span>Фото</span>
         </label>
         <label class="game__answer game__answer--paint">
