@@ -10,14 +10,6 @@ export const makePaintingsContainer = (imgObj, container) => {
     return container;
   });
 };
-export const makePhotosContainer = (imgObj, container) => {
-  imgObj.photos.forEach((photo)=> {
-    let eachPhoto = new Image();
-    eachPhoto.src = photo;
-    container.push(eachPhoto);
-    return container;
-  });
-};
 const contentIntro = `<main id="main" class="central__content">
     <div id="intro" class="intro">
       <h1 class="intro__asterisk">*</h1>

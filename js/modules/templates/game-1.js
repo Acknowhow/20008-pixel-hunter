@@ -6,7 +6,7 @@ import {makeIntroTemplate} from './intro';
 import {makeGame2Template} from './game-2.js';
 import {questions} from './data/game1Content';
 // import {createImgTemplate} from './../question-constructor';
-// import {makeQuestion} from './../question-constructor';
+import {makeQuestion} from './../question-constructor';
 const templateGame1 = `
   <div class="game">
     <p class="game__task">Угадайте для каждого изображения фото или рисунок?</p>
@@ -51,6 +51,7 @@ const templateGame1 = `
   </div>`;
 export const makeGame1Template = () => {
   makeTemplate(templateGame1, templateFooter, templateHeader(initialState));
+  document.querySelector(`form > div:nth-child(1)`).replaceChild(makeQuestion(document.querySelector(`form > div:nth-child(1) > img`), questions, `question1`), document.querySelector(`form > div:nth-child(1) > img`));
   // const imageStorage = document.querySelector(`form > div:nth-child(1)`).appendChild(createImgTemplate(imagesData, imagesData.paintings[0]));
  //  imageStorage.onload = () => {
   //   document.querySelector(`form > div:nth-child(1)`).appendChild(makeQuestion(questions, `question1`, imageStorage));
