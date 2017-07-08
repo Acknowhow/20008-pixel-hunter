@@ -27,6 +27,11 @@ export const questions = Object.freeze({
       value: `paint`,
       text: `Рисунок`
     }
+  },
+  'question2': {
+    params: {
+      src: `=${images.paintings[0]}`
+    }
   }
 });
 

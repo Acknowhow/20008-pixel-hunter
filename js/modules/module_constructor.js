@@ -18,5 +18,4 @@ export const makeTemplate = (templateMain, templateFooter, templateHeader, quest
   if (!questionObj) {
     return;
   }
-
 };
