@@ -5,6 +5,7 @@ import {makeTemplate} from './../module_constructor.js';
 import {makeIntroTemplate} from './intro';
 import {makeGame2Template} from './game-2.js';
 import {questions} from './data/game1Content';
+import {imgContainer} from './loader/imageLoader';
 // import {createImgTemplate} from './../question-constructor';
 import {makeQuestion} from './../question-constructor';
 const templateGame1 = `
@@ -12,7 +13,7 @@ const templateGame1 = `
     <p class="game__task">Угадайте для каждого изображения фото или рисунок?</p>
     <form class="game__content">
       <div class="game__option">
-        <img ${[...Object.entries(questions[`question1`].params).map((question) => question)].join(` `).replace(/,/g, ` `)}>
+        <img ${[...Object.entries(questions[`question1`].params).map((question) => question)].join(` `).replace(/,/g, ` `)} src=${imgContainer[0].src}>
         <label class="game__answer game__answer--photo">  
           <input name=question1 type="radio" value="photo">
           <span>Фото</span>

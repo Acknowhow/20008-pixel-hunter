@@ -12,7 +12,6 @@ export const content = {
 export const questions = Object.freeze({
   'question1': {
     params: {
-      src: `=${images.photos[0]}`,
       alt: `="Option 1"`
     },
     dimensions: {

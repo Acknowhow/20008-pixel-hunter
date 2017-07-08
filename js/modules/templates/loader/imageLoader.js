@@ -1,12 +1,11 @@
-const images = [];
-const preload = function () {
-  for (let i = 0; i < arguments.length; i++) {
+import imagesData from './../data/imagesData';
+export const preload = function (...args) {
+  const images = [];
+  for (let i = 0; i < args.length; i++) {
     images[i] = new Image();
-    images[i].src = preload.arguments[i];
+    images[i].src = args[i];
   }
+  return images;
 };
-preload(
-    `http://domain.tld/gallery/image-001.jpg`,
-    `http://domain.tld/gallery/image-002.jpg`,
-    `http://domain.tld/gallery/image-003.jpg`
-);
+export const imgContainer = window.onload = preload(`http://i.imgur.com/egBvykv.jpg`);
+
