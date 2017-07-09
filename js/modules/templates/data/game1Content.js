@@ -1,4 +1,4 @@
-import images from './imagesData';
+
 export const initialState = Object.freeze({
   score: 0,
   time: 0,
@@ -25,11 +25,6 @@ export const questions = Object.freeze({
     paint: {
       value: `paint`,
       text: `Рисунок`
-    }
-  },
-  'question2': {
-    params: {
-      src: `=${images.paintings[0]}`
     }
   }
 });
