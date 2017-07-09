@@ -41,6 +41,6 @@ export const photos = {
   dishes: [
     [`Mug`, `http://i.imgur.com/Spk7kTG.jpg`]
   ]
-}
+};
 
 
