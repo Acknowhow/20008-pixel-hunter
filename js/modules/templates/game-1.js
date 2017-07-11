@@ -9,12 +9,13 @@ import {questions} from './data/game1Content';
 // import {createImgTemplate} from './../question-constructor';
 // src=${paintingsPeople[0].src
 import {makeQuestion} from './../question-constructor';
+import {images} from './loader/imageLoader';
 const templateGame1 = `
   <div class="game">
     <p class="game__task">Угадайте для каждого изображения фото или рисунок?</p>
     <form class="game__content">
       <div class="game__option">
-        <img ${[...Object.entries(questions[`question1`].params).map((question) => question)].join(` `).replace(/,/g, ` `)} ">
+        <img ${[...Object.entries(questions[`question1`].params).map((question) => question)].join(` `).replace(/,/g, ` `)} src=${images.people[0][1]}>
         <label class="game__answer game__answer--photo">  
           <input name=question1 type="radio" value="photo">
           <span>Фото</span>

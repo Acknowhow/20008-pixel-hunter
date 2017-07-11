@@ -1,47 +1,38 @@
 import {paintings} from './../data/imagesData';
-import {photos} from './../data/imagesData';
+const entriesTest = (obj) => {
+  const container = {};
+  return function () {
+    [...Object.entries(obj)].map(([key, index]) =>{
+      container[key] = new Map(index);
+
+    });
+    return container;
+  };
+};
 const shuffle = (array) => {
   let m = array.length;
   let t;
   let i;
-
-  // While there remain elements to shuffle…
+  // While there remain elements to shuffle
   while (m) {
-
-    // Pick a remaining element…
+    // Pick a remaining element
     i = Math.floor(Math.random() * m--);
-
-    // And swap it with the current element.
+    // And swap it with the current element
     t = array[m];
     array[m] = array[i];
     array[i] = t;
   }
-
   return array;
 };
-
-const preload = function (...args) {
-  if (localStorage.getItem(`savedimgs`) === null) {
-    const images = [];
-    for (let i = 0; i < args.length; i++) {
-      images[]
-    }
-  }
-}
-// export const preload = function (...args) {
-//   if (localStorage.getItem(`savedimgs`) === null) { //
-//     args = shuffle(args[0]);
-//     const images = [];
-//     for (let i = 0; i < args.length; i++) {
-//       images[i] = new Image();
-//       images[i] = args[i][1];
-//     }
-//     let stored = JSON.stringify(images);
-//     localStorage.setItem(`savedimgs`, stored);
-//     return images;
-//   }
-//   const shuffleSaved = shuffle(JSON.parse(localStorage.getItem(`savedimgs`)));
-//   return shuffleSaved;
-// };
+const paintingsMapped = entriesTest(paintings)();
+export const paintingsKeyMapped = (paintingsKey) => {
+  paintingsMapped[paintingsKey].forEach((value, key, array) => {
+    let img = document.createElement(`img`);
+    img.src = value;
+    img.alt = key;
+    array[key] = img;
+  });
+  return shuffle(paintingsMapped);
+};
 
 
