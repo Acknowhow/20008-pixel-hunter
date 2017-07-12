@@ -1,9 +1,6 @@
-import {paintingsKeyMapped} from './../modules/templates/loader/imageLoader';
-export const paintingsPeopleStored = paintingsKeyMapped(`people`);
-export const paintingsAnimalsStored = paintingsKeyMapped(`animals`);
-export const paintingsDishesStored = paintingsKeyMapped(`dishes`);
-export const paintingsItemsStored = paintingsKeyMapped(`items`);
-export const paintingsFruitsStored = paintingsKeyMapped(`fruits`);
+import {mapKey} from './templates/loader/imageLoader';
+
+export const animals = window.onload = mapKey(`animals`);
 export const central = document.querySelector(`.central`);
 // Function for inserting screens directly into container
 export const makeTemplate = (templateMain, templateFooter, templateHeader, questionObj) =>{

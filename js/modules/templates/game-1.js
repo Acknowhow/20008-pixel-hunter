@@ -2,17 +2,17 @@ import {templateHeader} from './header';
 import {initialState} from './data/game1Content';
 import {templateFooter} from './footer';
 import {makeTemplate} from './../module_constructor';
-import {paintingsPeopleStored} from './../module_constructor';
+import {animals} from './../module_constructor';
 import {makeIntroTemplate} from './intro';
 import {makeGame2Template} from './game-2.js';
 import {questions} from './data/game1Content';
 import {makeQuestion} from './../question-constructor';
 const templateGame1 = `
   <div class="game">
-    <p class="game__task">Угадайте для каждого изображения фото или рисунок?</p>
+    <p class="game__task">Угадайте для каждого изображения фото или рисунок?</p> 
     <form class="game__content">
       <div class="game__option">
-        <img ${[...Object.entries(questions[`question1`].params).map((question) => question)].join(` `).replace(/,/g, ` `)} ${paintingsPeopleStored.src}>
+        <img ${[...Object.entries(questions[`question1`].params).map((question) => question)].join(` `).replace(/,/g, ` `)} src=${animals[`Lizard`]}>
         <label class="game__answer game__answer--photo">  
           <input name=question1 type="radio" value="photo">
           <span>Фото</span>
