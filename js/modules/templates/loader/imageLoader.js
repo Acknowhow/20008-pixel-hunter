@@ -1,4 +1,5 @@
 import {paintings} from './../data/imagesData';
+import {photos} from './../data/imagesData';
 const entries = (obj) => {
   const container = {};
   return function () {
@@ -11,7 +12,8 @@ const entries = (obj) => {
 };
 
 const paintingsMapped = entries(paintings)();
-export const mapKey = (someKey) => {
+const photosMapped = entries(photos)();
+export const paintingsMapKey = (someKey) => {
   const paintingsLoaded = {
   }
   paintingsMapped[someKey].forEach((value, key) => {
@@ -21,5 +23,15 @@ export const mapKey = (someKey) => {
     paintingsLoaded[key] = img;
   });
   return paintingsLoaded;
-}
-
+};
+export const photosMapKey = (someKey) => {
+  const photosLoaded = {
+  }
+  photosMapped[someKey].forEach((value, key) => {
+    let img = document.createElement(`img`);
+    img.src = value;
+    img.alt = key;
+    photosLoaded[key] = img;
+  });
+  return photosLoaded;
+};

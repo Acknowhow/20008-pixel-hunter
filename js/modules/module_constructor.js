@@ -1,6 +1,16 @@
-import {mapKey} from './templates/loader/imageLoader';
+import {paintingsMapKey} from './templates/loader/imageLoader';
+import {photosMapKey} from './templates/loader/imageLoader';
 
-export const animals = window.onload = mapKey(`animals`);
+export const paintingsPeople = window.onload = paintingsMapKey(`people`);
+export const paintingsAnimals = window.onload = paintingsMapKey(`animals`);
+export const paintingsItems = window.onload = paintingsMapKey(`items`);
+export const paintingsFruits = window.onload = paintingsMapKey(`fruits`);
+export const paintingsDishes = window.onload = paintingsMapKey(`dishes`);
+export const photosPeople = window.onload = photosMapKey(`people`);
+export const photosAnimals = window.onload = photosMapKey(`animals`);
+export const photosItems = window.onload = photosMapKey(`items`);
+export const photosFruits = window.onload = photosMapKey(`fruits`);
+export const photosDishes = window.onload = photosMapKey(`dishes`);
 export const central = document.querySelector(`.central`);
 // Function for inserting screens directly into container
 export const makeTemplate = (templateMain, templateFooter, templateHeader, questionObj) =>{
