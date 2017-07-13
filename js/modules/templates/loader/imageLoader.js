@@ -1,5 +1,5 @@
-import {paintings} from './../data/imagesData';
-import {photos} from './../data/imagesData';
+import {paintings} from './../data/imageData';
+import {photos} from './../data/imageData';
 const entries = (obj) => {
   const container = {};
   return function () {
