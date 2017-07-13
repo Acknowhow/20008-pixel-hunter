@@ -1,5 +1,4 @@
 import {paintings} from './../data/imageData';
-import {photos} from './../data/imageData';
 const entries = (obj) => {
   const container = {};
   return function () {
@@ -12,10 +11,9 @@ const entries = (obj) => {
 };
 
 const paintingsMapped = entries(paintings)();
-const photosMapped = entries(photos)();
-export const paintingsMapKey = (someKey) => {
+const mapKey = (someKey) => {
   const paintingsLoaded = {
-  }
+  };
   paintingsMapped[someKey].forEach((value, key) => {
     let img = document.createElement(`img`);
     img.src = value;
@@ -24,14 +22,15 @@ export const paintingsMapKey = (someKey) => {
   });
   return paintingsLoaded;
 };
-export const photosMapKey = (someKey) => {
-  const photosLoaded = {
-  }
-  photosMapped[someKey].forEach((value, key) => {
-    let img = document.createElement(`img`);
-    img.src = value;
-    img.alt = key;
-    photosLoaded[key] = img;
-  });
-  return photosLoaded;
+let peoplePaintingsImgs = mapKey(`peoplePaintings`);
+let animalsPaintingsImgs = mapKey(`animalsPaintings`);
+let itemsPaintingsImgs = mapKey(`itemsPaintings`);
+let fruitsPaintingsImgs = mapKey(`fruitsPaintings`);
+let dishesPaintingsImgs = mapKey(`dishesPaintings`);
+export const imgsObj = {
+  peoplePaintings: peoplePaintingsImgs,
+  animalsPaintings: animalsPaintingsImgs,
+  itemsPaintings: itemsPaintingsImgs,
+  fruitsPaintings: fruitsPaintingsImgs,
+  dishesPaintings: dishesPaintingsImgs
 };

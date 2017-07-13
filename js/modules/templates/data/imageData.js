@@ -1,22 +1,22 @@
 export const paintings = {
-  people: [
+  peoplePaintings: [
     [`Man bearded`, `http://i.imgur.com/5kcp9i0.jpg`],
     [`Woman showered`, `http://i.imgur.com/l8J6vbh.jpg`],
     [`Woman thoughtful`, `http://i.imgur.com/aA3KkAW.jpg`],
     [`Girls sitting`, `http://i.imgur.com/27nbLSA.jpg`]
   ],
-  animals: [
+  animalsPaintings: [
     [`Lizard`, `http://i.imgur.com/FA4D3kO.jpg`],
     [`Spider`, `http://i.imgur.com/kIyT2iO.jpg`]
   ],
-  items: [
+  itemsPaintings: [
     [`Metal spheres`, `http://i.imgur.com/Sjjnuyi.jpg`]
   ],
-  fruits: [
+  fruitsPaintings: [
     [`Watermelon`, `http://i.imgur.com/rvDgwaA.jpg`],
     [`Pomegranade`, `http://i.imgur.com/mgbDqkB.jpg`]
   ],
-  dishes: [
+  dishesPaintings: [
     [`Plates`, `http://i.imgur.com/cjS2DDf.jpg`]
   ]
 };

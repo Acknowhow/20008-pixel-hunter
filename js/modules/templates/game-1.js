@@ -1,19 +1,23 @@
 import {templateHeader} from './header';
-import {initialState} from './data/game1Content';
+import {initialState} from './data/gameData';
 import {templateFooter} from './footer';
 import {makeTemplate} from './../module_constructor';
-import {animals} from './../module_constructor';
 import {makeIntroTemplate} from './intro';
 import {makeGame2Template} from './game-2.js';
-import {questions} from './data/game1Content';
-import {makeQuestion} from './../question-constructor';
+import {imgsObj} from './loader/imageLoader';
+// import {questions} from './data/questionData';
+// import {makeQuestion} from './../question-constructor';
+// let peoplePaintingsImgs = mapKey(`peoplePaintings`);
+// imgsObj[`peoplePaintings`] = peoplePaintingsImgs;
+
+
+// import {paintingsAnimals} from './../module_constructor';
 const templateGame1 = `
   <div class="game">
     <p class="game__task">Угадайте для каждого изображения фото или рисунок?</p> 
     <form class="game__content">
       <div class="game__option">
-        <img ${[...Object.entries(questions[`question1`].params).map((question) => question)].join(` `).replace(/,/g, ` `)} src=${animals[`Lizard`]}>
-        <label class="game__answer game__answer--photo">  
+        <label class="game__answer game__answer--photo">
           <input name=question1 type="radio" value="photo">
           <span>Фото</span>
         </label>
@@ -51,7 +55,8 @@ const templateGame1 = `
   </div>`;
 export const makeGame1Template = () => {
   makeTemplate(templateGame1, templateFooter, templateHeader(initialState));
-  document.querySelector(`form > div:nth-child(1)`).replaceChild(makeQuestion(document.querySelector(`form > div:nth-child(1) > img`), questions, `question1`), document.querySelector(`form > div:nth-child(1) > img`));
+  document.querySelector(`form > div:nth-child(1)`).insertAdjacentElement(`afterbegin`, imgsObj[`peoplePaintings`][`Man bearded`]);
+  // document.querySelector(`form > div:nth-child(1)`).replaceChild(makeQuestion(document.querySelector(`form > div:nth-child(1) > img`), questions, `question1`), document.querySelector(`form > div:nth-child(1) > img`));
   // const imageStorage = document.querySelector(`form > div:nth-child(1)`).appendChild(createImgTemplate(imagesData, imagesData.paintings[0]));
  //  imageStorage.onload = () => {
   //   document.querySelector(`form > div:nth-child(1)`).appendChild(makeQuestion(questions, `question1`, imageStorage));
