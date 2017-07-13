@@ -1,3 +1,5 @@
+import {imgsObj} from './../loader/imageLoader';
+
 export const initialState = Object.freeze({
   score: 0,
   time: 0,
@@ -8,3 +10,9 @@ export const content = {
   text: [`Фото`, `Рисунок`]
 };
 
+export const questions = Object.freeze({
+  'screen-1': {
+    painting: imgsObj[`peoplePaintings`][`Man Bearded`],
+    photo: imgsObj[``]
+}
+})

@@ -4,7 +4,6 @@ import {templateFooter} from './footer';
 import {makeTemplate} from './../module_constructor';
 import {makeIntroTemplate} from './intro';
 import {makeGame2Template} from './game-2.js';
-import {imgsObj} from './loader/imageLoader';
 // import {questions} from './data/questionData';
 // import {makeQuestion} from './../question-constructor';
 // let peoplePaintingsImgs = mapKey(`peoplePaintings`);
@@ -55,7 +54,7 @@ const templateGame1 = `
   </div>`;
 export const makeGame1Template = () => {
   makeTemplate(templateGame1, templateFooter, templateHeader(initialState));
-  document.querySelector(`form > div:nth-child(1)`).insertAdjacentElement(`afterbegin`, imgsObj[`peoplePaintings`][`Man bearded`]);
+  // document.querySelector(`form > div:nth-child(1)`).insertAdjacentElement(`afterbegin`, imgsObj[`peoplePaintings`][`Man bearded`]);
   // document.querySelector(`form > div:nth-child(1)`).replaceChild(makeQuestion(document.querySelector(`form > div:nth-child(1) > img`), questions, `question1`), document.querySelector(`form > div:nth-child(1) > img`));
   // const imageStorage = document.querySelector(`form > div:nth-child(1)`).appendChild(createImgTemplate(imagesData, imagesData.paintings[0]));
  //  imageStorage.onload = () => {
