@@ -1,4 +1,4 @@
-import {paintings} from './../data/imageData';
+import {images} from './../data/imageData';
 const entries = (obj) => {
   const container = {};
   return function () {
@@ -9,12 +9,11 @@ const entries = (obj) => {
     return container;
   };
 };
-
-const paintingsMapped = entries(paintings)();
+const imagesMapped = entries(images)();
 const mapKey = (someKey) => {
   const paintingsLoaded = {
   };
-  paintingsMapped[someKey].forEach((value, key) => {
+  imagesMapped[someKey].forEach((value, key) => {
     let img = document.createElement(`img`);
     img.src = value;
     img.alt = key;
@@ -22,15 +21,57 @@ const mapKey = (someKey) => {
   });
   return paintingsLoaded;
 };
-let peoplePaintingsImgs = mapKey(`peoplePaintings`);
-let animalsPaintingsImgs = mapKey(`animalsPaintings`);
-let itemsPaintingsImgs = mapKey(`itemsPaintings`);
-let fruitsPaintingsImgs = mapKey(`fruitsPaintings`);
-let dishesPaintingsImgs = mapKey(`dishesPaintings`);
-export const imgsObj = {
-  peoplePaintings: peoplePaintingsImgs,
-  animalsPaintings: animalsPaintingsImgs,
-  itemsPaintings: itemsPaintingsImgs,
-  fruitsPaintings: fruitsPaintingsImgs,
-  dishesPaintings: dishesPaintingsImgs
-};
+
+const peoplePaintImg = mapKey(`peoplePaint`);
+const animalsPaintImg = mapKey(`animalsPaint`);
+const itemsPaintImg = mapKey(`itemsPaint`);
+const fruitsPaintImg = mapKey(`fruitsPaint`);
+const dishesPaintImg = mapKey(`dishesPaint`);
+const peoplePhotoImg = mapKey(`peoplePhoto`);
+const animalsPhotoImg = mapKey(`animalsPhoto`);
+const itemsPhotoImg = mapKey(`itemsPhoto`);
+const fruitsPhotoImg = mapKey(`fruitsPhoto`);
+const dishesPhotoImg = mapKey(`dishesPhoto`);
+
+export const imgLoaded = Object.freeze({
+  'screen-1': {
+    paint: peoplePaintImg[`Man bearded`],
+    photo: peoplePhotoImg[`Morgan Freeman`]
+  },
+  'screen-2': {
+    paint: animalsPaintImg[`Lizard`],
+    photo: animalsPhotoImg[`Cheetah`]
+  },
+  'screen-3': {
+    paint: itemsPaintImg[`Metal spheres`],
+    photo: itemsPhotoImg[`Books abstract`]
+  },
+  'screen-4': {
+    paint: fruitsPaintImg[`Watermelon`],
+    photo: fruitsPhotoImg[`Figs`]
+  },
+  'screen-5': {
+    paint: peoplePaintImg[`Woman showered`],
+    photo: peoplePhotoImg[`Ethiopian girl`],
+  },
+  'screen-6': {
+    paint: animalsPaintImg[`Spider`],
+    photo: animalsPaintImg[`Bumble bee`],
+  },
+  'screen-7': {
+    paint: peoplePaintImg[`Girls sitting`],
+    photo: peoplePhotoImg[`Girl homeless`],
+  },
+  'screen-8': {
+    paint: fruitsPaintImg[`Pomegranate`],
+    photo: fruitsPhotoImg[`Apple tree`],
+  },
+  'screen-9': {
+    paint: dishesPaintImg[`Plates`],
+    photo: dishesPhotoImg[`Mug`],
+  },
+  'screen-10': {
+    paint: peoplePaintImg[`Woman thoughtful`],
+    photo: peoplePhotoImg[`Grandma Indian`]
+  }
+});

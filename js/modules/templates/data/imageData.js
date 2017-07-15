@@ -1,4 +1,4 @@
-export const paintings = {
+export const images = {
   peoplePaintings: [
     [`Man bearded`, `http://i.imgur.com/5kcp9i0.jpg`],
     [`Woman showered`, `http://i.imgur.com/l8J6vbh.jpg`],
@@ -14,31 +14,29 @@ export const paintings = {
   ],
   fruitsPaintings: [
     [`Watermelon`, `http://i.imgur.com/rvDgwaA.jpg`],
-    [`Pomegranade`, `http://i.imgur.com/mgbDqkB.jpg`]
+    [`Pomegranate`, `http://i.imgur.com/mgbDqkB.jpg`]
   ],
   dishesPaintings: [
     [`Plates`, `http://i.imgur.com/cjS2DDf.jpg`]
-  ]
-};
-export const photos = {
-  people: [
+  ],
+  peoplePhotos: [
     [`Morgan Freeman`, `http://i.imgur.com/8aNXpLk.jpg`],
     [`Grandma Indian`, `http://i.imgur.com/PKtMBLt.jpg`],
     [`Girl homeless`, `http://i.imgur.com/mdvy2jt.jpg`],
-    [`Ethyopian girl`, `http://i.imgur.com/jX3HIry.jpg`]
+    [`Ethiopian girl`, `http://i.imgur.com/jX3HIry.jpg`]
   ],
-  animals: [
+  animalsPhotos: [
     [`Bumble bee`, `http://i.imgur.com/OI49pzH.jpg`],
     [`Cheetah`, `http://i.imgur.com/LWFCQSK.jpg`]
   ],
-  items: [
+  itemsPhotos: [
     [`Books abstract`, `http://i.imgur.com/Eb5bc8u.jpg)`]
   ],
-  fruits: [
+  fruitsPhotos: [
     [`Figs`, `http://i.imgur.com/y9cN0UD.jpg`],
     [`Apple tree`, `http://i.imgur.com/qDpBXvT.jpg`]
   ],
-  dishes: [
+  dishesPhotos: [
     [`Mug`, `http://i.imgur.com/Spk7kTG.jpg`]
   ]
 };
