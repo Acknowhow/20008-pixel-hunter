@@ -1,8 +1,8 @@
-export const questions = Object.freeze({
+export const question = Object.freeze({
   'question1': {
-    params: {
-      alt: `Option 1`
-    },
+    name: `question1`,
+    alt: `Option 1`,
+    type: `radio`,
     dimensions: {
       width: `468`,
       height: `458`
@@ -17,9 +17,9 @@ export const questions = Object.freeze({
     }
   },
   'question2': {
-    params: {
-      alt: `Option 2`
-    },
+    name: `question2`,
+    alt: `Option 2`,
+    type: `radio`,
     dimensions: {
       width: `468`,
       height: `458`

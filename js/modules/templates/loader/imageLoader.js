@@ -22,56 +22,56 @@ const mapKey = (someKey) => {
   return paintingsLoaded;
 };
 
-const peoplePaintImg = mapKey(`peoplePaint`);
-const animalsPaintImg = mapKey(`animalsPaint`);
-const itemsPaintImg = mapKey(`itemsPaint`);
-const fruitsPaintImg = mapKey(`fruitsPaint`);
-const dishesPaintImg = mapKey(`dishesPaint`);
-const peoplePhotoImg = mapKey(`peoplePhoto`);
-const animalsPhotoImg = mapKey(`animalsPhoto`);
-const itemsPhotoImg = mapKey(`itemsPhoto`);
-const fruitsPhotoImg = mapKey(`fruitsPhoto`);
-const dishesPhotoImg = mapKey(`dishesPhoto`);
+const peoplePaint = mapKey(`peoplePaint`);
+const animalPaint = mapKey(`animalPaint`);
+const itemPaint = mapKey(`itemPaint`);
+const fruitPaint = mapKey(`fruitPaint`);
+const dishPaint = mapKey(`dishPaint`);
+const peoplePhoto = mapKey(`peoplePhoto`);
+const animalPhoto = mapKey(`animalPhoto`);
+const itemPhoto = mapKey(`itemPhoto`);
+const fruitPhoto = mapKey(`fruitPhoto`);
+const dishPhoto = mapKey(`dishPhoto`);
 
 export const imgLoaded = Object.freeze({
   'screen-1': {
-    paint: peoplePaintImg[`Man bearded`],
-    photo: peoplePhotoImg[`Morgan Freeman`]
+    paint: peoplePaint[`Man bearded`],
+    photo: peoplePhoto[`Morgan Freeman`]
   },
   'screen-2': {
-    paint: animalsPaintImg[`Lizard`],
-    photo: animalsPhotoImg[`Cheetah`]
+    paint: animalPaint[`Lizard`],
+    photo: animalPhoto[`Cheetah`]
   },
   'screen-3': {
-    paint: itemsPaintImg[`Metal spheres`],
-    photo: itemsPhotoImg[`Books abstract`]
+    paint: itemPaint[`Metal spheres`],
+    photo: itemPhoto[`Books abstract`]
   },
   'screen-4': {
-    paint: fruitsPaintImg[`Watermelon`],
-    photo: fruitsPhotoImg[`Figs`]
+    paint: fruitPaint[`Watermelon`],
+    photo: fruitPhoto[`Figs`]
   },
   'screen-5': {
-    paint: peoplePaintImg[`Woman showered`],
-    photo: peoplePhotoImg[`Ethiopian girl`],
+    paint: peoplePaint[`Woman showered`],
+    photo: peoplePhoto[`Ethiopian girl`],
   },
   'screen-6': {
-    paint: animalsPaintImg[`Spider`],
-    photo: animalsPaintImg[`Bumble bee`],
+    paint: animalPaint[`Spider`],
+    photo: animalPaint[`Bumble bee`],
   },
   'screen-7': {
-    paint: peoplePaintImg[`Girls sitting`],
-    photo: peoplePhotoImg[`Girl homeless`],
+    paint: peoplePaint[`Girls sitting`],
+    photo: peoplePhoto[`Girl homeless`],
   },
   'screen-8': {
-    paint: fruitsPaintImg[`Pomegranate`],
-    photo: fruitsPhotoImg[`Apple tree`],
+    paint: fruitPaint[`Pomegranate`],
+    photo: fruitPhoto[`Apple tree`],
   },
   'screen-9': {
-    paint: dishesPaintImg[`Plates`],
-    photo: dishesPhotoImg[`Mug`],
+    paint: dishPaint[`Plates`],
+    photo: dishPhoto[`Mug`],
   },
   'screen-10': {
-    paint: peoplePaintImg[`Woman thoughtful`],
-    photo: peoplePhotoImg[`Grandma Indian`]
+    paint: peoplePaint[`Woman thoughtful`],
+    photo: peoplePhoto[`Grandma Indian`]
   }
 });
