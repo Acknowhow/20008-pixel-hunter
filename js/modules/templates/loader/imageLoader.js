@@ -22,16 +22,16 @@ const mapKey = (someKey) => {
   return paintingsLoaded;
 };
 
-const peoplePaint = mapKey(`peoplePaint`);
-const animalPaint = mapKey(`animalPaint`);
-const itemPaint = mapKey(`itemPaint`);
-const fruitPaint = mapKey(`fruitPaint`);
-const dishPaint = mapKey(`dishPaint`);
-const peoplePhoto = mapKey(`peoplePhoto`);
-const animalPhoto = mapKey(`animalPhoto`);
-const itemPhoto = mapKey(`itemPhoto`);
-const fruitPhoto = mapKey(`fruitPhoto`);
-const dishPhoto = mapKey(`dishPhoto`);
+const peoplePaint = window.onload = mapKey(`peoplePaint`);
+const animalPaint = window.onload = mapKey(`animalPaint`);
+const itemPaint = window.onload = mapKey(`itemPaint`);
+const fruitPaint = window.onload = mapKey(`fruitPaint`);
+const dishPaint = window.onload = mapKey(`dishPaint`);
+const peoplePhoto = window.onload = mapKey(`peoplePhoto`);
+const animalPhoto = window.onload = mapKey(`animalPhoto`);
+const itemPhoto = window.onload = mapKey(`itemPhoto`);
+const fruitPhoto = window.onload = mapKey(`fruitPhoto`);
+const dishPhoto = window.onload = mapKey(`dishPhoto`);
 
 export const imgLoaded = Object.freeze({
   'screen-1': {
